@@ -8,10 +8,10 @@ set -euo pipefail
 #   Starts a Docker Distribution instance in docker and prints it's IP address
 #   to the stdout.
 #
-#   Useful for conducting tests involing Blackspace docker images.
+#   Useful for conducting tests involing FeelGuuds docker images.
 #
 
-CONTAINER_NAME="${1:-"Blackspace-docker-registry"}"
+CONTAINER_NAME="${1:-"FeelGuuds-docker-registry"}"
 PORT="${2:-"5000"}"
 
 IS_ALREADY_RUNNING="$(docker inspect -f '{{.State.Running}}' "$CONTAINER_NAME" 2>/dev/null || true)"
