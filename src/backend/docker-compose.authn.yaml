@@ -1,0 +1,82 @@
+version: '3.7'
+
+services:
+  auth_service_db:
+    container_name: ${AUTHN_POSTGRES_CONTAINER:-auth_service_db}
+    image: postgres
+    environment:
+      POSTGRES_DB: ${AUTHN_POSTGRES_DB_NAME:-authentication_service}
+      POSTGRES_USER: ${AUTHN_POSTGRES_USER:-authentication_service}
+      POSTGRES_PASSWORD: ${AUTHN_POSTGRES_PASSWORD:-authentication_service}
+      PGDATA: /data/auth_service_db
+    volumes:
+      - auth_service_db:/data/auth_service_db
+    ports:
+      - ${AUTHN_POSTGRES_EXTERNAL_PORT:-5432}:${AUTHN_POSTGRES_INTERNAL_PORT:-5432}
+    restart: always
+    networks:
+      - monitor-net
+
+  auth_service_redis:
+    container_name: ${AUTHN_REDIS_NAME:-redis}
+    image: redis
+    networks:
+      - monitor-net
+    ports:
+      - ${AUTHN_REDIS_EXTERNAL_PORT:-6379}:${AUTHN_REDIS_INTERNAL_PORT:-6379}
+
+  # docker run -it --rm  --publish 8080:3000   -e AUTHN_URL=http://localhost:8080   -e APP_DOMAINS=localhost   -e DATABASE_URL=sqlite3://:memory:?mode=memory\&cache=shared   -e SECRET_KEY_BASE=changeme   -e HTTP_AUTH_USERNAME=hello   -e HTTP_AUTH_PASSWORD=world   --name authn_app   keratin/authn-server:latest   sh -c "./authn migrate && ./authn server"
+  auth_service:
+    container_name: ${AUTHN_SERVICE_NAME:-authentication-service}
+    image: keratin/authn-server:latest
+    ports:
+      - "8000:3000"
+    environment:
+      - DATABASE_URL=postgres://authentication_service:authentication_service@auth_service_db:5432/authentication_service?sslmode=disable
+      - AUTHN_URL=http://localhost:8000
+      - APP_DOMAINS=localhost
+      - SECRET_KEY_BASE=secret
+      - REDIS_URL=redis://redis:6379/11
+      - HTTP_AUTH_USERNAME=feelguuds
+      - HTTP_AUTH_PASSWORD=feelguuds
+      - ENABLE_SIGNUP=false
+      - ACCESS_TOKEN_TTL=86400
+      - REFRESH_TOKEN_TTL=2592000
+      - SESSION_KEY_SALT=feelguuds
+      - DB_ENCRYPTION_KEY_SALT=feelguuds
+      - USERNAME_IS_EMAIL=true
+      - PASSWORD_POLICY_SCORE=2
+      - PASSWORD_CHANGE_LOGOUT=true
+      - PASSWORD_RESET_TOKEN_TTL=1800
+    env_file:
+      - .env
+    depends_on:
+      - auth_service_redis
+      - auth_service_db
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    networks:
+      - monitor-net
+    command: > #sleep 10s && sh -c "./authn migrate && ./authn server"
+      sh -c "
+              while ! nc -z auth_service_db 5432;
+              do
+                echo sleeping;
+                sleep 1;
+              done;
+              echo Connected!;
+              echo Migrating Database Schema
+              ./authn migrate
+              echo Starting Authentication Server;
+              ./authn server;
+            "
+
+networks:
+  monitor-net:
+    driver: bridge
+
+volumes:
+  auth_service_db:

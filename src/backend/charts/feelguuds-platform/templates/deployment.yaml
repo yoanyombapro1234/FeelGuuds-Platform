@@ -1,0 +1,214 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose -f docker-compose.yaml -f docker-compose.authn.yaml -f docker-compose.merchant.dep.yaml -f docker-compose.shopper.dep.yamlconvert
+    kompose.version: 1.19.0 (f63a961c)
+  name: {{ include "platform.fullname" . }}
+  labels:
+    {{- include "platform.labels" . | nindent 4 }}
+    io.kompose.service: {{ template "platform.fullname" . }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  progressDeadlineSeconds: {{ .Values.progressDeadlineInSeconds }}
+  revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
+  strategy:
+    type: {{ .Values.deploymentStrategy.type }}
+  selector:
+    matchLabels:
+      io.kompose.service: {{ template "platform.fullname" . }}
+      {{- include "platform.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "platform.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "platform.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          {{- if .Values.securityContext }}
+          securityContext:
+		  {{- toYaml .Values.securityContext | nindent 12 }}
+          {{- else if (or .Values.service.hostPort .Values.tls.hostPort) }}
+          securityContext:
+            allowPrivilegeEscalation: true
+            capabilities:
+              drop:
+                - ALL
+              add:
+                - NET_BIND_SERVICE
+		  {{- end }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: AUTHN_ACCESS_TOKEN_TTL
+              valueFrom:
+                configMapKeyRef:
+                  key: AUTHN_ACCESS_TOKEN_TTL
+                  name: feelguuds-platform-env
+            - name: AUTHN_APP_PASSWORD_CHANGED_URL
+              valueFrom:
+                configMapKeyRef:
+                  key: AUTHN_APP_PASSWORD_CHANGED_URL
+                  name: feelguuds-platform-env
+            - name: AUTHN_APP_PASSWORD_RESET_URL
+              valueFrom:
+                configMapKeyRef:
+                  key: AUTHN_APP_PASSWORD_RESET_URL
+                  name: feelguuds-platform-env
+            - name: AUTHN_DATABASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  key: AUTHN_DATABASE_URL
+                  name: feelguuds-platform-env
+            - name: AUTHN_DB_ENCRYPTION_KEY_SALT
+              valueFrom:
+                configMapKeyRef:
+                  key: AUTHN_DB_ENCRYPTION_KEY_SALT
+                  name: feelguuds-platform-env
+            - name: AUTHN_DOMAINS
+              valueFrom:
+                configMapKeyRef:
+                  key: AUTHN_DOMAINS
+                  name: feelguuds-platform-env
+            - name: AUTHN_ENABLE_SIGNUP
+              valueFrom:
+                configMapKeyRef:
+                  key: AUTHN_ENABLE_SIGNUP
+                  name: feelguuds-platform-env
+          command:
+            - ./podinfo
+            - --port={{ .Values.service.httpPort | default 9897 }}
+            {{- if .Values.host }}
+            - --host={{ .Values.host }}
+            {{- end }}
+            {{- if .Values.tls.enabled }}
+            - --secure-port={{ .Values.tls.port }}
+            {{- end }}
+            {{- if .Values.tls.certPath }}
+            - --cert-path={{ .Values.tls.certPath }}
+            {{- end }}
+            {{- if .Values.service.metricsPort }}
+            - --port-metrics={{ .Values.service.metricsPort }}
+            {{- end }}
+            {{- if .Values.service.grpcPort }}
+            - --grpc-port={{ .Values.service.grpcPort }}
+            {{- end }}
+            {{- if .Values.service.grpcService }}
+            - --grpc-service-name={{ .Values.service.grpcService }}
+            {{- end }}
+            {{- range .Values.backends }}
+            - --backend-url={{ . }}
+            {{- end }}
+            {{- if .Values.cache }}
+            - --cache-server={{ .Values.cache }}
+            {{- else if .Values.redis.enabled }}
+            - --cache-server={{ template "platform.fullname" . }}-redis:6379
+            {{- end }}
+            - --level={{ .Values.logLevel }}
+            - --random-delay={{ .Values.faults.delay }}
+            - --random-error={{ .Values.faults.error }}
+            {{- if .Values.faults.unhealthy }}
+            - --unhealthy
+            {{- end }}
+            {{- if .Values.faults.unready }}
+            - --unready
+            {{- end }}
+            {{- if .Values.h2c.enabled }}
+            - --h2c
+            {{- end }}
+          ports:
+            - containerPort: {{ .Values.service.httpPort | default 9897 }}
+              protocol: TCP
+		      {{- if .Values.service.hostPort }}
+              hostPort: {{ .Values.service.hostPort }}
+		      {{- end }}
+		   {{- if .Values.tls.enabled }}
+            - name: https
+              containerPort: {{ .Values.tls.port | default 9899 }}
+              protocol: TCP
+              {{- if .Values.tls.hostPort }}
+              hostPort: {{ .Values.tls.hostPort }}
+              {{- end }}
+          {{- end }}
+	      {{- if .Values.service.metricsPort }}
+            - name: http-metrics
+              containerPort: {{ .Values.service.metricsPort }}
+              protocol: TCP
+	      {{- end }}
+          {{- if .Values.service.grpcPort }}
+            - name: grpc
+              containerPort: {{ .Values.service.grpcPort }}
+              protocol: TCP
+          {{- end }}
+          livenessProbe:
+            exec:
+              command:
+                - podcli
+                - check
+                - http
+                - localhost:{{ .Values.service.httpPort | default 9897 }}/healthz
+            initialDelaySeconds: 1
+            timeoutSeconds: 5
+          readinessProbe:
+            exec:
+              command:
+                - podcli
+                - check
+                - http
+                - localhost:{{ .Values.service.httpPort | default 9897 }}/readyz
+            initialDelaySeconds: 1
+            timeoutSeconds: 5
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+            - mountPath: /go/src/github.com/yoanyombapro1234/FeelGuuds-Platform/src/backend
+              name: feelguuds-platform-claim0
+            - name: data
+              mountPath: /data
+            {{- if .Values.tls.enabled }}
+            - name: tls
+              mountPath: {{ .Values.tls.certPath | default "/data/cert" }}
+              readOnly: true
+            {{- end }}
+      dnsPolicy: {{ .Values.dnsPolicy }}
+      restartPolicy: {{ .Values.restartPolicy }}
+      schedulerName: {{ .Values.schedulerName }}
+      securityContext: {{ .Values.securityContext }}
+      terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
+      volumes:
+        - name: data
+          emptyDir: {}
+        - name: feelguuds-platform-claim0
+          persistentVolumeClaim:
+            claimName: feelguuds-platform-claim0
+	  {{- if .Values.tls.enabled }}
+        - name: tls
+          secret:
+            secretName: {{ template "platform.tlsSecretName" . }}
+	  {{- end }}
+
+    {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
