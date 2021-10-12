@@ -1,0 +1,43 @@
+name: backend e2e
+
+on:
+  pull_request:
+  push:
+    branches:
+      - "*"
+
+jobs:
+  kind-helm:
+    strategy:
+      matrix:
+        helm-version:
+          - 3.6.0
+    env:
+      working-directory: ./src/backend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Kubernetes
+        uses: engineerd/setup-kind@v0.5.0
+        with:
+          image: kindest/node:v1.19.11
+      - name: Build Container Image
+        working-directory: ${{env.working-directory}}
+        run: |
+          ./integration-tests/build.sh
+          kind load docker-image test/feelguuds_platform:latest
+      - name: Setup Helm
+        uses: ./.github/actions/helm
+        with:
+          version: ${{ matrix.helm-version }}
+      - name: Deploy To Local K8's Cluster
+        working-directory: ${{env.working-directory}}
+        run: ./scripts/install_charts.sh
+      - name: Run Integration Tests
+        working-directory: ${{env.working-directory}}
+        run: ./integration-tests/test.sh
+      - name: Debug failure
+        if: failure()
+        run: |
+          kubectl logs -l app=feelguuds-platform || true
