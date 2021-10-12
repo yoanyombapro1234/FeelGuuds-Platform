@@ -1,0 +1,33 @@
+.select-buildings {
+  .btn.dropdown-item {
+    height: 66px;
+    width: 100%;
+  }
+}
+
+.select-buildings-button {
+  border: none !important;
+  padding-left: 0;
+  box-shadow: none !important;
+  background-image: none;
+
+  &:hover {
+    background: none;
+  }
+
+  @media screen and (max-width: 400px) {
+    transform: translateX(15px);
+  }
+}
+
+.select-building-option {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  margin-right: 16px;
+  font-size: 1rem;
+
+  img {
+    margin-right: 16px;
+  }
+}

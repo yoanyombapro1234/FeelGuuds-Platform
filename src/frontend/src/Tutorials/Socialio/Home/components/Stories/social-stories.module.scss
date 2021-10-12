@@ -1,0 +1,60 @@
+@import '@duik/core/_vars.scss';
+.social-stories {
+  padding: 20px;
+  width: 100%;
+  overflow-x: auto;
+
+  &-content {
+    // hardcoded, control width with js
+    width: 450px;
+    & > *:not(:last-child) {
+      margin-right: 10px;
+    }
+    padding-right: 20px;
+  }
+}
+
+.social-story {
+  @include backgroundCover();
+  height: 170px;
+  width: 100px;
+  position: relative;
+  display: inline-block;
+  border-radius: 4px;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    background: linear-gradient(
+      -180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+  }
+
+  &-avatar {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-name {
+    font-size: 0.875rem;
+    color: $text-on-color;
+    font-weight: 500;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+  }
+}

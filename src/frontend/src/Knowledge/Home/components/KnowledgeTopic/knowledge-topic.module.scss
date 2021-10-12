@@ -1,0 +1,91 @@
+@import '@duik/core/_vars.scss';
+
+.knowledge-list-topic {
+  display: flex;
+  align-items: center;
+  transition: 0.2s;
+  & + * {
+    margin-top: 30px;
+  }
+  &-content {
+    margin-left: 24px;
+    & + * {
+      margin-left: 24px;
+    }
+    flex-grow: 1;
+  }
+
+  &-title {
+    display: flex;
+    align-items: center;
+  }
+  &-tag {
+    margin-left: 10px;
+  }
+
+  &-link {
+    color: $text-main;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+  &-action {
+    margin-left: 20px;
+    display: block;
+  }
+  &-users {
+    display: flex;
+    justify-content: flex-end;
+    & > * + * {
+      margin-left: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .knowledge-list-topic {
+    flex-wrap: wrap;
+    padding-left: 102px !important;
+    position: relative;
+    justify-content: space-between;
+    &-icon {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+    }
+    &-content {
+      flex-basis: 100%;
+      margin-bottom: 25px;
+    }
+  }
+}
+@media screen and (max-width: 550px) {
+  .knowledge-list-topic {
+    padding-left: 15px !important;
+    padding-top: 112px !important;
+    justify-content: center;
+    &-title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      & > * {
+        margin: 0;
+        &:not(:first-child) {
+          margin-top: 0.5rem;
+        }
+      }
+    }
+    &-content {
+      text-align: center;
+    }
+    &-icon {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.dropdownIcon {
+  font-size: 0.7rem;
+  color: $text-secondary;
+}

@@ -1,0 +1,45 @@
+@import '@duik/core/_vars.scss';
+.social-events-content {
+  & > * {
+    margin: 30px;
+  }
+}
+
+.social-events-widget-calendar {
+  @media screen and (max-width: 560px) {
+    margin: 0 !important;
+    border-radius: 0 !important;
+    border: none;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .social-events {
+    &-calendar-title {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .social-events {
+    &-add-sm {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .social-events {
+    &-add-lg,
+    &-dropdown-filter,
+    &-title-icon,
+    &-dropdown-share-text {
+      display: none !important;
+    }
+  }
+}
+
+.calendar-btn-arrow {
+  font-size: 0.55rem !important;
+}

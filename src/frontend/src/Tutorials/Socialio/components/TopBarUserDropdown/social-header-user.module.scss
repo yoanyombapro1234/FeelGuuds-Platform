@@ -1,0 +1,13 @@
+@import '@duik/core/_vars.scss';
+
+.btn-social-top-bar-dropdown {
+  position: relative;
+  // right: -15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}

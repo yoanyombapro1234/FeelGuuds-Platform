@@ -1,0 +1,144 @@
+@import '@duik/core/_vars.scss';
+
+.buildings-dashboard-content {
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    margin: 30px;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+
+  h2 {
+    font-size: 1.125rem;
+    line-height: 1.875rem;
+    font-weight: 500;
+  }
+
+  .buildings-dashboard-content-grid {
+    margin: 15px;
+    display: flex;
+    flex-wrap: wrap;
+
+    & > * {
+      flex-basis: calc(25% - 30px);
+      margin: 15px;
+
+      @media screen and (max-width: 1350px) {
+        flex-basis: calc(33.3% - 30px);
+      }
+
+      @media screen and (max-width: 1000px) {
+        flex-basis: calc(50% - 30px);
+      }
+
+      @media screen and (max-width: 400px) {
+        flex-basis: calc(100% - 30px);
+      }
+    }
+  }
+}
+
+.buildings-dashboard {
+  background: $bg-main;
+
+  &-categories {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px -15px;
+    margin-top: 1.275rem;
+
+    & > * {
+      margin: 10px 15px;
+      flex-basis: calc(100% - 30px);
+    }
+
+    @media screen and (min-width: 520px) {
+      & > * {
+        flex-basis: calc(50% - 30px);
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      & > * {
+        flex-basis: calc(25% - 30px);
+      }
+    }
+  }
+
+  &-category {
+    border-radius: 4px;
+    border: $border-default-base;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+
+    &-image {
+      @include backgroundCover();
+      height: 60px;
+      width: 80px;
+      flex-grow: 0;
+    }
+
+    &-title {
+      font-weight: 500;
+      font-size: 1rem;
+      color: $text-main;
+      line-height: 1.5rem;
+      margin-left: 1rem;
+    }
+  }
+
+  &-upgrade-banner {
+    @include backgroundCover();
+    height: 300px;
+    border-radius: 4px;
+    padding: 30px 40px;
+
+    @media screen and (min-width: 520px) {
+      padding: 40px 50px;
+    }
+
+    color: $text-on-color;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    & > * {
+      width: auto;
+    }
+
+    &-name {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      & > *:not(:last-child) {
+        margin-right: 0.5rem;
+      }
+    }
+
+    &-pro {
+      display: inline-block;
+      padding: 0.2rem 0.45rem;
+      background: $bg-main;
+      color: $text-main;
+      border-radius: 4px;
+      font-size: 0.75rem;
+    }
+
+    &-title,
+    h2 {
+      font-size: 1.625rem;
+      color: $text-on-color;
+      line-height: 2.375rem;
+      font-weight: 400;
+      max-width: 280px;
+    }
+  }
+}

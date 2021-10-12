@@ -1,0 +1,45 @@
+@import "@duik/core/_vars.scss";
+
+.buildings-top-bar-actions {
+  height: 38px;
+
+  @media screen and (max-width: 768px) {
+    .buildings-top-bar-mobile-hidden {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    display: none;
+  }
+}
+
+.buildings-top-bar {
+  position: relative;
+
+  @media screen and (max-width: 400px) {
+    justify-content: flex-end;
+  }
+
+  .nav-burger {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .nav-burger {
+      display: flex;
+      position: absolute;
+      border-radius: 0;
+      border: none !important;
+      border-right: $border-default-base !important;
+      width: 70px;
+      height: 70px;
+      left: 0;
+      top: 0;
+      font-weight: 600;
+      box-shadow: none;
+    }
+
+    padding-left: 70px;
+  }
+}

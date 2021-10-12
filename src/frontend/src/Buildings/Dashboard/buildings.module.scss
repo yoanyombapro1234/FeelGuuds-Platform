@@ -1,0 +1,9 @@
+.buildingsMenuOpen {
+  @media screen and (max-width: 768px) {
+    transform: translateX(270px);
+  }
+}
+
+.buildingsMenuAnimate {
+  transition: .4s transform;
+}

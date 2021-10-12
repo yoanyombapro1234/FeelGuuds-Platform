@@ -1,0 +1,177 @@
+@import '@duik/core/_vars.scss';
+
+.buildings-listing-detail {
+  background: $bg-main;
+  padding: 30px;
+
+  &-cover-image {
+    flex-basis: 50%;
+    height: 330px;
+    @include backgroundCover();
+    border-radius: 4px;
+    margin-bottom: 30px;
+
+    &>* {
+      min-width: 1px;
+    }
+  }
+
+  &-content {
+    display: block;
+
+    @media screen and (min-width: 901px) and (max-width: 1200px) {
+      display: flex;
+      margin: -15px;
+
+      &>* {
+        min-width: 1px;
+        margin: 15px;
+      }
+    }
+
+    @media screen and (min-width: 1601px) {
+      display: flex;
+      margin: -15px;
+
+      &>* {
+        min-width: 1px;
+        margin: 15px;
+      }
+    }
+  }
+
+  &-content-main {
+    flex-basis: 475px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &-content-misc {
+    margin-top: 30px;
+    flex-basis: 285px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-name {
+    font-weight: 400;
+    font-size: 1.625rem;
+    line-height: 2.375rem;
+    margin-top: .5rem;
+  }
+
+  &-description {
+    color: $text-base;
+    margin-top: .75rem;
+  }
+
+  &-rating-summary {
+    padding: 1rem 0;
+    border-bottom: $border-default-base;
+
+    &+* {
+      margin-top: 1rem;
+    }
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: -15px;
+    margin-right: -15px;
+
+    &-item {
+      min-width: 1px;
+      flex-basis: calc(50% - 30px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 7px 15px;
+    }
+
+    &-attr {
+      font-size: .875rem;
+    }
+  }
+
+
+
+  &-review {
+    margin-top: 1rem;
+
+    &+* {
+      margin-top: 1rem;
+    }
+  }
+
+  &-review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .875rem;
+  }
+
+
+  &-photos {
+    padding-top: 1rem;
+  }
+
+
+  &-gallery {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 1rem -5px 0;
+
+    &-image {
+      @include backgroundCover();
+      min-width: 1px;
+      flex-basis: calc(50% - 10px);
+      height: 100px;
+      border-radius: 4px;
+      margin: 5px;
+    }
+  }
+
+  &-amenities {
+    margin: .6rem 0;
+    width: 100%;
+
+    td {
+      padding: .375rem 0;
+      font-size: .875rem;
+      line-height: 1.375rem;
+      color: $text-base; // icon
+
+      i {
+        margin-right: .5rem;
+        color: $text-secondary;
+      }
+    }
+
+    td:last-child {
+      color: $text-main;
+      text-align: right;
+    }
+  }
+}
+
+
+
+
+
+.buildings-listing-detail-search-reviews {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.125rem 0;
+  border-top: $border-default-base;
+  border-bottom: $border-default-base;
+
+  .buildings-listing-detail-search-totals {
+    color: $text-main;
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+  }
+}

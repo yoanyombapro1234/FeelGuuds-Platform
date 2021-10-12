@@ -1,0 +1,39 @@
+@import '@duik/core/_vars.scss';
+.knowledge-top-bar-menu-btn {
+  display: none;
+  background: white !important;
+  width: 70px;
+  flex-basis: 70px;
+  flex-shrink: 0;
+  height: 100%;
+  border-radius: 0;
+  box-shadow: none !important;
+  border: none !important;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0;
+  @media screen and (max-width: 1200px) {
+    display: flex;
+  }
+  border-right: $border-default-base !important;
+  // border-bottom: $border-default-base !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.knowledge-top-bar {
+  @media screen and (max-width: 1200px) {
+    padding-left: 80px;
+    position: relative;
+  }
+  @media screen and (max-width: 768px) {
+    padding-left: 70px;
+  }
+}
+
+.knowledge-top-bar-actions {
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+}

@@ -1,0 +1,62 @@
+@import '@duik/core/_vars.scss';
+.card-doc {
+  h1,
+  h2,
+  h3,
+  h4 {
+    &:not([class]) {
+      color: $text-main;
+      & + p {
+        margin-top: 10px;
+      }
+      max-width: 760px;
+    }
+  }
+  p:not([class]) {
+    color: $text-base;
+    max-width: 760px;
+    & + p {
+      margin-top: 0.8rem;
+    }
+  }
+  h1:not([class]) {
+    /* Headline: */
+    font-weight: 300;
+    font-size: 2.25rem;
+    line-height: 3.125rem;
+  }
+  h2:not([class]) {
+    /* Headline: */
+    font-weight: 300;
+    font-size: 1.875rem;
+    line-height: 2.75rem; /* Headline: */
+  }
+
+  h3:not([class]) {
+    font-size: 1.375rem;
+    line-height: 2rem;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  a:not([class]) {
+    color: $color-primary;
+  }
+
+  p a:not([class]) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  em {
+    color: $text-secondary;
+  }
+
+  table tbody td {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+}

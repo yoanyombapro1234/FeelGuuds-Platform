@@ -1,0 +1,64 @@
+@import '@duik/core/_vars.scss';
+
+
+
+.login-card {
+  border: $border-default-base;
+  border-radius: 4px;
+  padding: 24px 0 18px;
+  text-align: center;
+  background: transparent;
+  outline: none !important;
+  position: relative;
+  cursor: pointer;
+
+  * {
+    color: $text-secondary;
+    font-weight: 500;
+  }
+
+  i {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+
+  .login-card-check {
+    font-size: .5rem;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    color: $text-on-color !important;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: $color-primary;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-top: 0;
+    margin-bottom: 0;
+    transform: translate(-50%, 50%);
+    opacity: 0;
+  }
+
+  &:hover,
+  &.login-card-selected {
+    border-color: $color-primary;
+
+    * {
+      color: $color-primary;
+    }
+  }
+
+  &.login-card-selected {
+    box-shadow: 0 0 0 1px $color-primary;
+
+    .login-card-check {
+      opacity: 1;
+    }
+  }
+
+
+}

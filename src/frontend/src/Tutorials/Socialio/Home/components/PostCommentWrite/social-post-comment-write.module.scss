@@ -1,0 +1,28 @@
+@import '@duik/core/_vars.scss';
+.social-post-comment-write {
+  padding: 10px 20px;
+  display: flex;
+  align-items: flex-start;
+  textarea {
+    border: none;
+    resize: none;
+    flex-grow: 1;
+    margin-left: 20px;
+    padding-top: 8px;
+    line-height: 1.4rem;
+    outline: none;
+    background: transparent;
+  }
+  &-actions {
+    display: flex;
+    font-size: 20px;
+    margin-top: 6px;
+    color: $text-secondary;
+    & > * {
+      display: block;
+    }
+    & > *:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}

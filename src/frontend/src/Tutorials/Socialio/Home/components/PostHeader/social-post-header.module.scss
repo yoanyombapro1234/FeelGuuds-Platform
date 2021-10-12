@@ -1,0 +1,33 @@
+@import '@duik/core/_vars.scss';
+.social-post-header {
+  margin: 20px 20px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  a {
+    color: $text-main;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &-text {
+    color: $text-base;
+  }
+
+  &-avatar {
+    align-items: flex-start;
+  }
+
+  &-nameText {
+    text-overflow: initial;
+    white-space: initial;
+  }
+}
+
+.dropdown-btn-dots {
+  &:after,
+  &:before {
+    display: none;
+  }
+  padding: 0;
+}

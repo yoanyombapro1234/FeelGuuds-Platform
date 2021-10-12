@@ -1,0 +1,75 @@
+@import '@duik/core/_vars.scss';
+
+.buildings-nav-top-bar {
+  background: transparent;
+}
+
+.buildings-nav-top-bar-title {
+  transform: translateY(2px);
+}
+
+.nav-link-count {
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.nav-panel-user {
+  &-container {
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid $border-color-base;
+
+    span:first-child {
+      color: $text-on-color;
+    }
+
+    &:hover {
+      span {
+        color: $text-on-color;
+      }
+    }
+  }
+
+  &-dropdown-icon {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.nav-panel-about {
+  &-container {
+    flex-basis: 130px;
+    flex-shrink: 0;
+    padding: 25px;
+    border-top: 1px solid $border-color-base;
+  }
+
+  &-copyright {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    margin-bottom: 8px;
+    color: $text-on-color;
+  }
+
+  &-about {
+    font-size: 0.75rem;
+    color: $text-base;
+    line-height: 1.125rem;
+  }
+}
+
+.buildings-navigation {
+  @media screen and (max-width: 768px) {
+    z-index: 1000;
+    position: fixed;
+    right: 100%;
+  }
+}

@@ -1,0 +1,68 @@
+@import "@duik/core/_vars.scss";
+
+@media screen and (max-width: 1200px) {
+
+  .tutorials-top-bar {
+
+    &-divider,
+    &-links {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tutorials-top-bar {
+
+    &-divider2,
+    &-actions,
+    &-goPremiumBtn {
+      display: none;
+    }
+  }
+}
+
+.tutorials-top-bar-divider {
+  margin: 0 15px;
+  height: 30px;
+}
+
+.tutorials-top-bar {
+  position: relative;
+
+  @media screen and (max-width: 1200px) {
+    padding: 0 85px;
+  }
+
+  &-btnFilter,
+  &-btnMenu {
+    display: none;
+    background: $bg-main !important;
+    width: 70px;
+    flex-basis: 70px;
+    flex-shrink: 0;
+    height: 100%;
+    border-radius: 0;
+    box-shadow: none !important;
+    border: none !important;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0;
+    position: absolute;
+    top: 0;
+
+    @media screen and (max-width: 1200px) {
+      display: flex;
+    }
+  }
+
+  &-btnFilter {
+    border-left: $border-default-base !important;
+    right: 0;
+  }
+
+  &-btnMenu {
+    border-right: $border-default-base !important;
+    left: 0;
+  }
+}

@@ -1,0 +1,37 @@
+.docs {
+  &-content {
+    &-main {
+      flex-basis: 60%;
+      transition: 0.5s;
+    }
+    &-code {
+      flex-basis: 30%;
+      transition: 0.5s;
+    }
+    @media screen and (max-width: 1200px) {
+      overflow: hidden;
+      &-main,
+      &-code {
+        width: 100%;
+        flex-basis: 100%;
+        flex-shrink: 0;
+      } // responsive positioning
+      &-main {
+        transform: translateX(-100%);
+      }
+      &-code {
+        transform: translateX(0);
+      }
+      &-main.active {
+        transform: translateX(0);
+      }
+      &-code.active {
+        transform: translateX(-100%);
+      }
+    }
+  }
+}
+
+.card-table-wrapper {
+  overflow-x: auto;
+}

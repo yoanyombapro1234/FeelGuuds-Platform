@@ -1,0 +1,74 @@
+.socialio {
+  &-container {
+    width: 100%;
+
+    &>* {
+      transition: 0.4s all;
+    }
+  }
+
+  &-content {
+    flex-grow: 1;
+  }
+
+  @media screen and (max-width: 1200px) {
+    overflow: hidden;
+
+    &-content {
+      min-width: 100vw;
+      max-width: 100vw;
+      transition: 0.4s all;
+      // color: #313136
+    }
+  }
+}
+
+.socialio-container {
+  @media screen and (max-width: 1200px) {
+    overflow: hidden;
+
+    &>* {
+      transform: translateX(-270px);
+    }
+
+    &.Home {
+      &>* {
+        transform: translateX(-270px);
+      }
+    }
+
+    &.Menu {
+      &>* {
+        transform: translateX(0);
+      }
+    }
+
+    &.Chat {
+      &>* {
+        transform: translateX(-540px);
+      }
+    }
+  }
+}
+
+.socialio {
+  &-mobile-nav {
+    display: none;
+
+    @media screen and (max-width: 1200px) {
+      display: flex;
+      justify-content: space-around;
+      flex-shrink: 0;
+    }
+
+    &-item {
+      justify-content: center;
+      flex-grow: 1;
+    }
+  }
+}
+
+html,
+body {
+  overflow: hidden;
+}

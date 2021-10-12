@@ -1,0 +1,33 @@
+.buildings-map-view {
+  height: 100%;
+  flex-basis: 50%;
+  flex-shrink: 1;
+  flex-grow: 1;
+  position: relative;
+  background-position: center center;
+
+  .pin1 {
+    top: 40%;
+    left: 30%;
+  }
+
+  .pin2 {
+    top: 60%;
+    left: 67%;
+  }
+
+  .pin3 {
+    top: 70%;
+    left: 45%;
+  }
+
+  .pin4 {
+    top: 50%;
+    left: 35%;
+  }
+
+  .pin5 {
+    top: 7%;
+    left: 62%;
+  }
+}

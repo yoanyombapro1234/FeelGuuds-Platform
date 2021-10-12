@@ -1,0 +1,86 @@
+@import '@duik/core/_vars.scss';
+
+.conversation-actions {
+  display: flex;
+  height: 38px;
+  justify-content: flex-end;
+}
+
+.conversation-avatars {
+  &>*:not(:first-child) {
+    margin-left: 10px;
+  }
+}
+
+.conversation-messages {
+  padding: 30px;
+}
+
+.conversation-messages-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.conversation-empty {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.conversation-textbar {
+  height: 66px;
+  flex-basis: 66px;
+  border-top: $border-default-base;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 5px 30px;
+  background: $bg-main;
+
+  textarea {
+    outline: none;
+    border: none;
+    flex-grow: 1;
+    resize: none;
+  }
+}
+
+.conversation-back {
+  display: none;
+  margin-left: -15px;
+}
+
+@media screen and (max-width: 1150px) {
+
+  .conversation-back {
+    display: block;
+  }
+
+  .conversation-avatars {
+    display: none;
+  }
+
+  .container {
+    overflow: hidden;
+
+    &>* {
+      flex-basis: 100% !important;
+      width: 100% !important;
+      max-width: none !important;
+      flex-shrink: 0 !important;
+      transition: transform .5s ease;
+      transform: translateX(0);
+    }
+
+    &.containerActiveConversation {
+      &>* {
+        transform: translateX(0%);
+        transform: translateX(-100%);
+      }
+    }
+  }
+}

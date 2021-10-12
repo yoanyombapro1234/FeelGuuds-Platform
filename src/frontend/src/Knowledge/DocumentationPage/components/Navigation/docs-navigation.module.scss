@@ -1,0 +1,13 @@
+.docs-top-bar {
+  z-index: 100;
+  @media screen and (max-width: 1400px) {
+    position: fixed;
+    top: 71px;
+    height: calc(100% - 70px);
+    right: 100%;
+    transition: 0.4s;
+    &-open {
+      transform: translateX(100%);
+    }
+  }
+}

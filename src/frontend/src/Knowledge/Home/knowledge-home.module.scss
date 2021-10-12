@@ -1,0 +1,73 @@
+@import '@duik/core/_vars.scss';
+.knowledge-home {
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  & > * {
+    padding: 15px;
+  }
+  & > *:first-child {
+    flex-basis: 600px;
+    flex-shrink: 1;
+    flex-grow: 1;
+  }
+  & > *:last-child {
+    flex-basis: 380px;
+    flex-shrink: 0;
+  }
+
+  &-title {
+    font-size: 1.625rem;
+    line-height: 2.375rem;
+    font-weight: 400;
+  }
+}
+
+.knowledge-home-menu-container {
+  & > *:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  @media screen and (max-width: 1024px) {
+    position: fixed;
+    top: 70px;
+    height: calc(100% - 70px);
+    width: 100%;
+    left: 0;
+    background: $bg-base;
+    padding: 15px;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    // & > * {
+    //   max-width: 512px;
+    //   margin-left: auto;
+    //   margin-right: auto;
+    // }
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.9);
+    transition: 0.4s;
+    &-open {
+      transform: scale(1);
+      opacity: 1;
+      visibility: visible;
+    }
+    & > *:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.knowledge-list {
+  & > * {
+    margin-top: 30px;
+  }
+}
+
+.knowledge-video-preview-container {
+  padding: 20px 0;
+  & > * {
+    padding: 10px 30px;
+  }
+}

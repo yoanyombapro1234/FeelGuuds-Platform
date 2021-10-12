@@ -1,0 +1,7 @@
+.tutorials-animations {
+  padding: 30px;
+
+  &>*:not(:first-child) {
+    margin-top: 30px;
+  }
+}

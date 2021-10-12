@@ -1,0 +1,12 @@
+@import '@duik/core/_vars.scss';
+
+.social-top-bar-icon {
+  margin-left: 16px;
+  color: $text-secondary;
+}
+
+.searchbarWrapper {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}

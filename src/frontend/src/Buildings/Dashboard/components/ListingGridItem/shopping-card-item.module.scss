@@ -1,0 +1,69 @@
+@import '@duik/core/_vars.scss';
+
+
+
+.shopping-card {
+  &-image-container {
+    height: 200px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  &-image {
+    @include backgroundCover();
+    height: 100%;
+    width: 100%;
+    transition: .4s all;
+  }
+
+
+  &-text {
+    color: $text-secondary;
+    font-size: .875rem;
+    line-height: 1.375rem;
+    margin-top: 5px;
+  }
+
+  &-footer {
+    border-top: $border-default-base;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    margin-top: 15px;
+  }
+
+  &-price {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+    color: $text-main;
+  }
+
+  &-status {
+    font-size: .875rem;
+    color: $color-primary;
+  }
+}
+
+.shopping-card-item {
+  h2.shopping-card-title {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+  }
+}
+
+.shopping-card-item:hover {
+
+  .shopping-card {
+    &-title {
+      color: $color-primary;
+    }
+
+    &-image {
+      transform: scale(1.1);
+    }
+  }
+}

@@ -1,0 +1,93 @@
+@import '@duik/core/_vars.scss';
+
+.social-profile-header {
+  &-cover {
+    @include backgroundCover();
+    height: 308px;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-image: linear-gradient(
+        -180deg,
+        rgba(0, 0, 0, 0) 9%,
+        rgba(0, 0, 0, 0.35) 99%
+      );
+      border-radius: 4px 4px 0 0;
+    }
+
+    &-btn-update {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      @media screen and (max-width: 768px) {
+        bottom: auto;
+        top: 10px;
+      }
+    }
+  }
+  &-avatar {
+    position: absolute;
+    bottom: -50px;
+    left: 30px;
+    z-index: 100;
+  }
+  &-name {
+    position: absolute;
+    z-index: 100;
+    left: 180px;
+    bottom: 15px;
+    font-weight: 500;
+    font-size: 1.375rem;
+    color: #ffffff;
+    line-height: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .social-profile-header-cover {
+    height: 200px;
+    &-avatar,
+    &-name {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &-name {
+      color: $text-main;
+      top: 270px;
+    }
+  }
+}
+
+.social-profile-header-content {
+  &-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    position: flex;
+    padding: 0 15px;
+    padding-left: 165px;
+    & > * {
+      padding: 0;
+      flex-grow: 1;
+      @media screen and (max-width: 768px) {
+        justify-content: space-between;
+      }
+    }
+  }
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .social-profile-header-content {
+    margin-top: 100px;
+    &-tabs {
+      padding: 0 15px;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@import '@duik/core/_vars.scss';
+
+.buildings-users {
+  background: $bg-main;
+}
+
+@media screen and (max-width: 1150px) {
+  .buildings-users-container {
+    overflow: hidden;
+    width: 100%;
+    & > * {
+      flex-basis: 100% !important;
+      width: 100% !important;
+      max-width: none !important;
+      flex-shrink: 0 !important;
+      transform: translateX(0);
+      transition: transform 0.6s ease;
+    }
+    &.buildings-users-container-mobile-detail {
+      & > * {
+        transform: translateX(-100%);
+      }
+    }
+  }
+}

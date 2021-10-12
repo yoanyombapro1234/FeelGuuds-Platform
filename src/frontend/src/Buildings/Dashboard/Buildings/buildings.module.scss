@@ -1,0 +1,32 @@
+@import '@duik/core/_vars.scss';
+
+.buildings-list-tab-switch {
+  background: $bg-main;
+  border-top: $border-default-base;
+
+  &>* {
+    flex-basis: 50%;
+    flex-grow: 1;
+    justify-content: center;
+  }
+
+  @media screen and (min-width: 1161px) {
+    display: none;
+  }
+}
+
+.contentContainer {
+  @media screen and (max-width: 1200px) {
+    overflow: hidden;
+
+    &>* {
+      flex-basis: 100% !important;
+      flex-shrink: 0 !important;
+      transition: .3s all;
+
+      &.mapView {
+        transform: translateX(-100%);
+      }
+    }
+  }
+}
