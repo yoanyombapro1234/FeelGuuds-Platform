@@ -1,14 +1,11 @@
 import React, { PureComponent } from 'react';
 import classnames from 'classnames';
 import defaultsDeep from 'lodash.defaultsdeep';
-import { defaults as chartjsDefaults } from 'react-chartjs-2';
 
 import createCustomTooltip from './CustomTooltip';
 import cls from './chartjs.module.scss';
 
 import getDefaultOptions from './getDefaultOptions';
-
-// chartjsDefaults.global.defaultFontFamily = 'Roboto';
 
 const getChart = chartType => require('react-chartjs-2')[chartType]; // eslint-disable-line
 
