@@ -6,29 +6,30 @@ import cls from './authentication-card.module.scss'
 
 
 export const AuthenticationCard = ({
-  children,
-  className,
-  isSelected,
-  ...rest
+    children,
+    className,
+    isSelected,
+
+    ...rest
 }) => (
-  <button
-    className={ classnames(cls['login-card'], className, {
-      [cls['login-card-selected']]: isSelected,
-    }) }
-    type="button"
-    { ...rest }
-  >
-    {children}
-    <Icon className={ cls['login-card-check'] }>
-      check
-    </Icon>
-  </button>
+    <button
+        className={classnames(cls['login-card'], className, {
+            [cls['login-card-selected']]: isSelected,
+        })}
+        type="button"
+        {...rest}
+    >
+        {children}
+        <Icon className={cls['login-card-check']}>
+            check
+        </Icon>
+    </button>
 )
 
 
 AuthenticationCard.defaultProps = {
-  className: null,
-  isSelected: false,
+    className: null,
+    isSelected: false,
 }
 
 export default AuthenticationCard

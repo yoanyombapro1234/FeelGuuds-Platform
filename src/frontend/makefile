@@ -18,14 +18,14 @@ build-container:
 # starts the docker container in the background
 .PHONY: run-container
 run-container: build-container
-	@docker run -dp 3000:3000 --name=feelguud-frontend $(DOCKER_IMAGE_NAME):$(VERSION)
+	@docker run -dp 3000:3000 --name=react-docker $(DOCKER_IMAGE_NAME):$(VERSION)
 	@docker ps
 
 
 # starts the docker container in the foreground
 .PHONY: run-container-live
 run-container-live: build-container
-	@docker run -p 3000:3000 --name=feelguud-frontend $(DOCKER_IMAGE_NAME):$(VERSION)
+	@docker run -p 3000:3000 --name=react-docker $(DOCKER_IMAGE_NAME):$(VERSION)
 
 
 lint: ## Runs lint validation

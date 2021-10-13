@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - 9000:3000
+    env_file: ./.env
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+    volumes: 
+      - .:/app
+      - /app/node_modules

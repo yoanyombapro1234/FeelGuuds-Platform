@@ -1,20 +1,11 @@
-FROM node:14-alpine as base
+FROM node:14-alpine AS builder
+WORKDIR /app
+COPY package.json ./
+COPY yarn.lock ./
+RUN yarn install --frozen-lockfile
+COPY . .
+RUN yarn build
 
-# base stage
-WORKDIR /src
-COPY package*.json /
-EXPOSE 3000
-
-# production stage
-FROM base as production
-ENV NODE_ENV=production
-RUN npm ci
-COPY . /
-CMD ["node", "bin/www"]
-
-# development stage
-FROM base as dev
-ENV NODE_ENV=development
-RUN npm install -g nodemon && npm install
-COPY . /
-CMD ["npm", "bin/www"]
+FROM nginx:1.19-alpine AS server
+COPY ./etc/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder ./app/build /usr/share/nginx/html
