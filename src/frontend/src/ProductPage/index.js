@@ -9,9 +9,9 @@ import {
     Container,
     Form,
 } from "react-bootstrap";
-import { Rating, HomeTopBar, Loader, Message } from "@components";
+import { Rating, HomeTopBar, Loader, Message } from "../@components";
 import { useDispatch, useSelector } from "react-redux";
-import { listProductDetails } from "@actions";
+import { listProductDetails } from "../@actions";
 import { Button } from "@duik/it";
 
 export const ProductPage = ({ history, match }) => {

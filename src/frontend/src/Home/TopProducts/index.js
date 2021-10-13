@@ -13,9 +13,9 @@ import {
     IconHeadline,
     Loader,
     Message,
-} from "@components";
+} from "../../@components";
 import cls from "./top-products.module.scss";
-import { listProducts } from "@actions";
+import { listProducts } from "../../@actions";
 
 export const TopProducts = () => {
     const dispatch = useDispatch();

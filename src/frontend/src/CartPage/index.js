@@ -11,8 +11,8 @@ import {
     Button,
     Card,
 } from "react-bootstrap";
-import { Message, HomeTopBar } from "@components";
-import { addToCart, removeFromCart } from "@actions";
+import { Message, HomeTopBar } from "../@components";
+import { addToCart, removeFromCart } from "../@actions";
 
 export const CartPage = ({ match, location, history }) => {
     const productId = match.params.id;

@@ -1,60 +1,70 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@animated-burgers/burger-squeeze": "^1.1.2",
-    "@duik/icon": "^0.6.0",
-    "@duik/it": "^0.6.0",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "axios": "^0.23.0",
-    "chart.js": "^3.5.1",
-    "classnames": "^2.3.1",
-    "lint": "^0.7.0",
-    "lodash.defaultsdeep": "^4.6.1",
-    "moment": "^2.29.1",
-    "prismjs": "^1.25.0",
-    "react": "^17.0.2",
-    "react-bootstrap": "^1.6.4",
-    "react-chartjs-2": "^3.0.5",
-    "react-dom": "^17.0.2",
-    "react-redux": "^7.2.5",
-    "react-router-dom": "^5.3.0",
-    "react-scripts": "4.0.3",
-    "redux": "^4.1.1",
-    "redux-devtools-extension": "^2.13.9",
-    "redux-thunk": "^2.3.0",
-    "typescript": "^4.1.2",
-    "web-vitals": "^1.0.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "frontend",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@animated-burgers/burger-squeeze": "^1.1.2",
+        "@duik/core": "^0.6.0",
+        "@duik/icon": "^0.6.0",
+        "@duik/it": "^0.6.0",
+        "@testing-library/jest-dom": "^5.11.4",
+        "@testing-library/react": "^11.1.0",
+        "@testing-library/user-event": "^12.1.10",
+        "@types/jest": "^26.0.15",
+        "@types/node": "^12.0.0",
+        "@types/node-sass": "^4.11.2",
+        "@types/react": "^17.0.0",
+        "@types/react-dom": "^17.0.0",
+        "axios": "^0.23.0",
+        "chart.js": "^3.5.1",
+        "classnames": "^2.3.1",
+        "lint": "^0.7.0",
+        "lodash.defaultsdeep": "^4.6.1",
+        "moment": "^2.29.1",
+        "node-sass": "^6.0.1",
+        "npm-run-all": "^4.1.5",
+        "prismjs": "^1.25.0",
+        "react": "^17.0.2",
+        "react-app-rewired": "^2.1.8",
+        "react-bootstrap": "^1.6.4",
+        "react-chartjs-2": "^3.0.5",
+        "react-dom": "^17.0.2",
+        "react-redux": "^7.2.5",
+        "react-router-dom": "^5.3.0",
+        "react-scripts": "4.0.3",
+        "react-snap": "^1.23.0",
+        "redux": "^4.1.1",
+        "redux-devtools-extension": "^2.13.9",
+        "redux-thunk": "^2.3.0",
+        "typescript": "^4.1.2",
+        "web-vitals": "^1.0.1"
+    },
+    "scripts": {
+        "eject": "react-scripts eject",
+        "start": "react-app-rewired start",
+        "build": "react-app-rewired build",
+        "build:dist": "cross-env DIST=true react-app-rewired build && react-snap && prettier run --write 'build/**/*.css' && prettier run --write 'build/**/*.html'",
+        "postbuild": "react-snap",
+        "deploy": "yarn build && now --target production",
+        "test": "react-app-rewired test --env=jsdom",
+        "dev": "react-scripts start"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
 }

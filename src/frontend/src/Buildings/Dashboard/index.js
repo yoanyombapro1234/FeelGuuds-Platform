@@ -5,7 +5,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 
 import { ContainerVertical, ContainerHorizontal } from '@duik/it';
 
-import { UiContext } from '@context';
+import { UiContext } from '../../@context';
 
 import Navigation from './components/Navigation';
 import cls from './buildings.module.scss';
@@ -19,47 +19,47 @@ import PageUserSettings from './UserSettings';
 import PageUsers from './Users';
 
 const BuildingsDashboard = () => {
-  const uiContext = React.useContext(UiContext);
-  return (
-    <ContainerHorizontal>
-      <Navigation
-        className={classnames(cls.buildingsMenuAnimate, {
-          [cls.buildingsMenuOpen]: uiContext.menu.isVisible
-        })}
-      />
-      <ContainerVertical
-        className={classnames(cls.buildingsMenuAnimate, {
-          [cls.buildingsMenuOpen]: uiContext.menu.isVisible
-        })}
-      >
-        <Switch>
-          <Route component={PageBuildings} path="/buildings/listing" />
-          <Route
-            component={PageDashboard}
-            exact
-            path="/buildings/dashboard"
-            strict
-          />
+    const uiContext = React.useContext(UiContext);
+    return (
+        <ContainerHorizontal>
+            <Navigation
+                className={classnames(cls.buildingsMenuAnimate, {
+                    [cls.buildingsMenuOpen]: uiContext.menu.isVisible
+                })}
+            />
+            <ContainerVertical
+                className={classnames(cls.buildingsMenuAnimate, {
+                    [cls.buildingsMenuOpen]: uiContext.menu.isVisible
+                })}
+            >
+                <Switch>
+                    <Route component={PageBuildings} path="/buildings/listing" />
+                    <Route
+                        component={PageDashboard}
+                        exact
+                        path="/buildings/dashboard"
+                        strict
+                    />
 
-          <Route
-            component={PageConversations}
-            path="/buildings/conversations/:conversation_id"
-          />
+                    <Route
+                        component={PageConversations}
+                        path="/buildings/conversations/:conversation_id"
+                    />
 
-          <Route
-            component={PageConversations}
-            path="/buildings/conversations"
-          />
+                    <Route
+                        component={PageConversations}
+                        path="/buildings/conversations"
+                    />
 
-          <Route component={PageUsers} path="/buildings/users/:user_id" />
-          <Route component={PageUsers} path="/buildings/users" />
-          <Route component={PageUserSettings} path="/buildings/user/settings" />
-          <Route component={PagePerformance} path="/buildings/performance" />
-          <Redirect to="/buildings/dashboard" />
-        </Switch>
-      </ContainerVertical>
-    </ContainerHorizontal>
-  );
+                    <Route component={PageUsers} path="/buildings/users/:user_id" />
+                    <Route component={PageUsers} path="/buildings/users" />
+                    <Route component={PageUserSettings} path="/buildings/user/settings" />
+                    <Route component={PagePerformance} path="/buildings/performance" />
+                    <Redirect to="/buildings/dashboard" />
+                </Switch>
+            </ContainerVertical>
+        </ContainerHorizontal>
+    );
 };
 
 export default BuildingsDashboard;

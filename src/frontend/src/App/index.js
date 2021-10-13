@@ -11,24 +11,24 @@ import "@duik/icon/dist/styles.css";
 import "@animated-burgers/burger-squeeze/dist/styles.css";
 import "./app.module.scss";
 
-import { UiContext } from "@context";
+import { UiContext } from "../@context";
 
 import { Switch, Route, Redirect, BrowserRouter } from "react-router-dom";
-import { Buildings } from "Buildings";
-import { Analytics } from "Analytics";
-import { AppDirectory } from "AppDirectory";
-import { Tutorials } from "Tutorials";
-import { Knowledge } from "Knowledge";
-import { CartPage } from "CartPage";
+import { Buildings } from "../Buildings";
+import { Analytics } from "../Analytics";
+import { AppDirectory } from "../AppDirectory";
+import { Tutorials } from "../Tutorials";
+import { Knowledge } from "../Knowledge";
+import { CartPage } from "../CartPage";
 
 // import { Socialio } from 'Socialio';
-import { useMenuVisibility } from "@utils";
+import { useMenuVisibility } from "../@utils";
 import {
     AuthenticationSignUpPage,
     AuthenticationSignInPage,
-} from "@components";
-import { Home } from "Home";
-import { ProductPage } from "ProductPage";
+} from "../@components";
+import { Home } from "../Home";
+import { ProductPage } from "../ProductPage";
 
 import Navigator from "./Navigator";
 
@@ -62,7 +62,7 @@ const RootRoute = (props) => {
     );
 };
 
-const App = () => {
+const Application = () => {
     const menu = useMenuVisibility(false);
     const filter = useMenuVisibility(false);
 
@@ -80,4 +80,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default Application;
