@@ -1,4 +1,4 @@
-name: authentication service test
+name: Authentication Service Test
 
 on:
   pull_request:

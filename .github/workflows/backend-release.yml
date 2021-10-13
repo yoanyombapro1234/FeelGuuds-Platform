@@ -1,4 +1,4 @@
-name: backend release
+name: Backend Release
 
 on:
   pull_request:

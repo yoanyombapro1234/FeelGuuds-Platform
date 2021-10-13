@@ -1,4 +1,4 @@
-name: backend e2e
+name: Backend E2E
 
 on:
   pull_request:
