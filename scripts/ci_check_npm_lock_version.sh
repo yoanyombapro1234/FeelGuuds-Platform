@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-REQUIRED_VERSION=2
+REQUIRED_VERSION=1
 LOCKFILE_VERSION=$(sed -n 's/[ \t]*"lockfileVersion"\: \([0-9]*\),/\1/p' "$1")
 
 if [[ $LOCKFILE_VERSION != "$REQUIRED_VERSION" ]]; then
