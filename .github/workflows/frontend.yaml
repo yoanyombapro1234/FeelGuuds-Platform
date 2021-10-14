@@ -18,8 +18,8 @@ jobs:
         with:
           persist-credentials: false
           submodules: recursive
-      - name: Check npm lock file version
-        run: ./scripts/ci_check_npm_lock_version.sh ./src/frontend/yarn.lock
+      #- name: Check npm lock file version
+      #  run: ./scripts/ci_check_npm_lock_version.sh ./src/frontend/yarn.lock
       - name: Check if frontend changes are present
         id: check
         env:
