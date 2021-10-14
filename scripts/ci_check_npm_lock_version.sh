@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 REQUIRED_VERSION=1
-LOCKFILE_VERSION=$(sed -n 's/[ \t]*"lockfileVersion"\: \([0-9]*\),/\1/p' "$1")
+LOCKFILE_VERSION=$(sed -n 's/[ \t]*"lockfile"\: \([0-9]*\),/\1/p' "$1")
 
 if [[ $LOCKFILE_VERSION != "$REQUIRED_VERSION" ]]; then
     echo >&2 "Incorrect npm lock file version: $LOCKFILE_VERSION (Version $REQUIRED_VERSION required)"
