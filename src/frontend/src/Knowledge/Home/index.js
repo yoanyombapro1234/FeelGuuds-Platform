@@ -20,7 +20,7 @@ import sidebarNavigation from './assets/sidebarNavigation';
 import sidebarVideos from './assets/sidebarVideos';
 import KnowledgeTopic from './components/KnowledgeTopic';
 
-const KnowledgeHome = ({ isMenuOpen }: { isMenuOpen: Boolean }) => {
+const KnowledgeHome = ({ isMenuOpen }) => {
     const uiContext = React.useContext(UiContext);
     return (
         <ContainerVertical>

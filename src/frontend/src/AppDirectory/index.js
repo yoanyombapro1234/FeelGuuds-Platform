@@ -115,7 +115,7 @@ const screens = [
     }
 ];
 
-const Item = ({ item }: { item: Object }) => (
+const Item = ({ item }) => (
     <Link key={item.to} to={item.to}>
         <Widget className={cls['app-directory-item']} margin>
             {item.isNew && <div className={cls['app-directory-item-new']}>NEW</div>}
