@@ -36,7 +36,7 @@ jobs:
         if: steps.check.outcome == 'failure'
         working-directory: ./src/frontend
         run: |
-          npm install
+          yarn install
       - name: lint
         if: steps.check.outcome == 'failure'
         working-directory: ./src/frontend
