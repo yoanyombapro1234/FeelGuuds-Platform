@@ -1,7 +1,7 @@
-import React from 'react';
-import classnames from 'classnames';
+import React from "react";
+import classnames from "classnames";
 
-import cls from './icon-text.module.scss';
+import cls from "./icon-text.module.scss";
 
 export const IconText = props => {
   const {
@@ -15,14 +15,14 @@ export const IconText = props => {
 
   return (
     <div
-      className={classnames(cls['icon-text'], className, {
-        [cls['icon-text-highlight']]: highlight,
-        [cls['icon-text-text-highlight']]: textHighlight
+      className={classnames(cls["icon-text"], className, {
+        [cls["icon-text-highlight"]]: highlight,
+        [cls["icon-text-text-highlight"]]: textHighlight
       })}
       {...rest}
     >
       {icon}
-      <span className={cls['icon-text-text']}>{children}</span>
+      <span className={cls["icon-text-text"]}>{children}</span>
     </div>
   );
 };

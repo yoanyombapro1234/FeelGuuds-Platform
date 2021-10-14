@@ -1,51 +1,51 @@
-import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
-import classnames from 'classnames';
-import Icon from '@duik/icon';
+import React from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
+import classnames from "classnames";
+import Icon from "@duik/icon";
 import {
   TabContainer,
   TabItem,
   ContainerVertical,
   ContainerHorizontal
-} from '@duik/it';
+} from "@duik/it";
 
 // import * as pages from './pages';
 
-import Chat from './components/Chat';
-import Navigation from './components/Navigation';
-import Header from './components/Header';
+import Chat from "./components/Chat";
+import Navigation from "./components/Navigation";
+import Header from "./components/Header";
 
-import PageHome from './Home';
-import PageProfile from './Profile';
-import PageEvents from './Events';
+import PageHome from "./Home";
+import PageProfile from "./Profile";
+import PageEvents from "./Events";
 
-import cls from './socialio.module.scss';
+import cls from "./socialio.module.scss";
 
 const tabItems = [
   {
-    className: 'Menu',
-    icon: 'gallery_grid_view',
+    className: "Menu",
+    icon: "gallery_grid_view",
     content: <Icon>gallery_grid_view</Icon>
   },
   {
-    id: 'centerIcon',
-    className: 'Home',
-    icon: 'home',
+    id: "centerIcon",
+    className: "Home",
+    icon: "home",
     content: <Icon>home</Icon>
   },
   {
-    className: 'Chat',
-    icon: 'message',
+    className: "Chat",
+    icon: "message",
     content: <Icon>message</Icon>
   }
 ];
 
 const icons = {
-  profile: 'smile',
-  events: 'calendar'
+  profile: "smile",
+  events: "calendar"
 };
 
-const getIcon = page => icons[page] || 'home';
+const getIcon = page => icons[page] || "home";
 
 export class Socialio extends React.PureComponent {
   static getDerivedStateFromProps(props, state) {
@@ -55,12 +55,12 @@ export class Socialio extends React.PureComponent {
       activeContent:
         props.location.pathname === state.pathname
           ? state.activeContent
-          : 'Home'
+          : "Home"
     };
   }
 
   state = {
-    activeContent: 'Home'
+    activeContent: "Home"
   };
 
   setActiveContent = content => () => {
@@ -74,34 +74,34 @@ export class Socialio extends React.PureComponent {
     const {
       location: { pathname }
     } = this.props;
-    const page = pathname.split('/')[2];
+    const page = pathname.split("/")[2];
 
     return (
       <ContainerVertical>
         <Header />
-        <TabContainer className={cls['socialio-mobile-nav']}>
+        <TabContainer className={cls["socialio-mobile-nav"]}>
           {tabItems.map(item => (
             <TabItem
-              key={classnames(cls['socialio-mobile-nav-item'], item.className)}
-              className={classnames(cls['socialio-mobile-nav-item'], {
+              key={classnames(cls["socialio-mobile-nav-item"], item.className)}
+              className={classnames(cls["socialio-mobile-nav-item"], {
                 active: activeContent === item.className
               })}
               onClick={this.setActiveContent(item.className)}
               size="smaller"
             >
               <Icon>
-                {item.id === 'centerIcon' ? getIcon(page) : item.icon}
+                {item.id === "centerIcon" ? getIcon(page) : item.icon}
               </Icon>
             </TabItem>
           ))}
         </TabContainer>
         <ContainerHorizontal
-          className={classnames(cls['socialio-container'], {
+          className={classnames(cls["socialio-container"], {
             [cls[activeContent]]: activeContent
           })}
         >
           <Navigation />
-          <div className={cls['socialio-content']}>
+          <div className={cls["socialio-content"]}>
             <Switch>
               {/* <Route component={pages.Profile} exact path="/social/profile" /> */}
               <Route component={PageEvents} exact path="/social/events" />

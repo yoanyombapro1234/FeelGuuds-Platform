@@ -1,9 +1,9 @@
-import classnames from 'classnames';
-import * as React from 'react';
+import classnames from "classnames";
+import * as React from "react";
 
-import { Avatar } from '@duik/it';
+import { Avatar } from "@duik/it";
 
-import cls from './social-friend-item.module.scss';
+import cls from "./social-friend-item.module.scss";
 
 const SocialProfileFriendListItem = ({
   className,
@@ -13,7 +13,7 @@ const SocialProfileFriendListItem = ({
   ...rest
 }) => (
   <div
-    className={classnames(cls['social-profile-friend-list-item'], className)}
+    className={classnames(cls["social-profile-friend-list-item"], className)}
     {...rest}
   >
     <Avatar

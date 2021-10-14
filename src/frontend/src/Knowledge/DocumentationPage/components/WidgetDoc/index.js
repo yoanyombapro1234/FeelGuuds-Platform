@@ -1,19 +1,19 @@
-import * as React from 'react';
-import classnames from 'classnames';
+import * as React from "react";
+import classnames from "classnames";
 
-import { Widget } from '@duik/it';
+import { Widget } from "@duik/it";
 
-import cls from './widget-doc.module.scss';
+import cls from "./widget-doc.module.scss";
 
 const WidgetDoc = ({ children, className, ...rest }) => (
-    <Widget className={classnames(cls['card-doc'], className)} {...rest}>
-        {children}
-    </Widget>
+  <Widget className={classnames(cls["card-doc"], className)} {...rest}>
+    {children}
+  </Widget>
 );
 
 WidgetDoc.defaultProps = {
-    className: null,
-    children: null
+  className: null,
+  children: null
 };
 
 export default WidgetDoc;

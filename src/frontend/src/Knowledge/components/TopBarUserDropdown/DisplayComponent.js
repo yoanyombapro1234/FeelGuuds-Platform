@@ -1,9 +1,9 @@
-import React from 'react';
-import classnames from 'classnames';
-import Icon from '@duik/icon';
-import { Avatar } from '@duik/it';
+import React from "react";
+import classnames from "classnames";
+import Icon from "@duik/icon";
+import { Avatar } from "@duik/it";
 
-import cls from './header-user-dropdown.module.scss';
+import cls from "./header-user-dropdown.module.scss";
 
 const TopBarUserButton = ({
   className,
@@ -20,11 +20,11 @@ const TopBarUserButton = ({
   <span
     role="button"
     onClick={handleOpen}
-    className={classnames(cls['top-bar-user-dropdown'], className)}
+    className={classnames(cls["top-bar-user-dropdown"], className)}
     {...rest}
   >
     <Avatar imgUrl={imgUrl} name={name} />
-    <Icon className={cls['top-bar-user-dropdown-arrow']}>arrow_dropdown</Icon>
+    <Icon className={cls["top-bar-user-dropdown-arrow"]}>arrow_dropdown</Icon>
   </span>
 );
 

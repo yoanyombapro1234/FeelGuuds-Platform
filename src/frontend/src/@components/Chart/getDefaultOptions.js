@@ -5,22 +5,22 @@
 export default valueFormatter => ({
   animation: false,
   hover: {
-    mode: 'label'
+    mode: "label"
   },
   responsive: true,
   maintainAspectRatio: false,
   tooltips: {
     enabled: false,
-    mode: 'index',
+    mode: "index",
     intersect: false,
-    position: 'nearest',
+    position: "nearest",
     callbacks: {
       labelColor: (tooltipItem, chartInstance) => {
         const meta = chartInstance.getDatasetMeta(tooltipItem.datasetIndex);
         const activeElement = meta.data[tooltipItem.index];
         const view = activeElement._view; // eslint-disable-line
         return {
-          borderColor: 'transparent',
+          borderColor: "transparent",
           backgroundColor: view.backgroundColor
         };
       }
@@ -35,14 +35,14 @@ export default valueFormatter => ({
         stacked: false,
         gridLines: {
           zeroLineWidth: 1,
-          zeroLineColor: 'rgba(128,128,128,0.1)',
-          color: 'rgba(128,128,128,0.1)'
+          zeroLineColor: "rgba(128,128,128,0.1)",
+          color: "rgba(128,128,128,0.1)"
         },
         ticks: {
           beginAtZero: true,
           callback: valueFormatter,
           maxTicksLimit: 5,
-          fontColor: '#9EA0A5'
+          fontColor: "#9EA0A5"
         }
       }
     ],
@@ -50,12 +50,12 @@ export default valueFormatter => ({
       {
         stacked: false,
         gridLines: {
-          color: 'transparent',
+          color: "transparent",
           zeroLineWidth: 2,
           drawBorder: false
         },
         ticks: {
-          fontColor: '#9EA0A5'
+          fontColor: "#9EA0A5"
         },
         barPercentage: 0.7,
         maxBarThickness: 12

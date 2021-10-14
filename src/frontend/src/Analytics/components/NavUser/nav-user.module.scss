@@ -1,4 +1,4 @@
-@import '@duik/core/_vars.scss';
+@import "@duik/core/_vars.scss";
 
 .analytics-nav-user {
   padding: 30px;
@@ -7,10 +7,9 @@
   align-items: center;
 
   &-avatarWrapper {
-    &+* {
+    & + * {
       margin-top: 14px;
     }
-
   }
 
   &-avatar {
@@ -28,6 +27,6 @@
 
   &-textTop {
     color: $text-secondary;
-    font-size: .875rem;
+    font-size: 0.875rem;
   }
 }

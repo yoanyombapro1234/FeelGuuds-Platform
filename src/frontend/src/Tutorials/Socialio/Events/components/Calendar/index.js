@@ -1,21 +1,21 @@
-import * as React from 'react';
+import * as React from "react";
 
-import CalendarCell from './CalendarCell';
+import CalendarCell from "./CalendarCell";
 
-import cls from './events-calendar.module.scss';
+import cls from "./events-calendar.module.scss";
 
 const days = [];
 for (let i = 27; i < 32; i += 1) {
   days.push({
     dayNumber: i,
-    month: 'May',
+    month: "May",
     year: 2018
   });
 }
 for (let i = 1; i < 31; i += 1) {
   days.push({
     dayNumber: i,
-    month: 'June',
+    month: "June",
     year: 2018,
     isPrimaryMonth: true
   });
@@ -24,103 +24,103 @@ for (let i = 1; i < 31; i += 1) {
 const events = [
   {
     dayNumber: 27,
-    month: 'May',
+    month: "May",
     year: 2018,
     events: [
       {
-        title: 'Endeavor New Product Launch (Climate Change)',
-        from: 'at 8:00 PM',
-        color: 'blue'
+        title: "Endeavor New Product Launch (Climate Change)",
+        from: "at 8:00 PM",
+        color: "blue"
       }
     ]
   },
   {
     dayNumber: 29,
-    month: 'May',
+    month: "May",
     year: 2018,
     events: [
       {
-        title: 'Rolond Discounts',
-        from: 'at 5:00 PM',
-        color: 'green'
+        title: "Rolond Discounts",
+        from: "at 5:00 PM",
+        color: "green"
       }
     ]
   },
   {
     dayNumber: 1,
-    month: 'June',
+    month: "June",
     year: 2018,
     events: [
       {
-        title: 'Health Awareness Commmunity Discount',
-        from: 'at 6:00 AM',
-        color: 'indigo'
+        title: "Health Awareness Commmunity Discount",
+        from: "at 6:00 AM",
+        color: "indigo"
       }
     ]
   },
   {
     dayNumber: 6,
-    month: 'June',
+    month: "June",
     year: 2018,
     events: [
       {
-        title: 'Festive Product Review',
-        from: 'at 8:46 PM',
-        color: 'blue'
+        title: "Festive Product Review",
+        from: "at 8:46 PM",
+        color: "blue"
       }
     ]
   },
   {
     dayNumber: 1,
-    month: 'June',
+    month: "June",
     year: 2018,
     events: [
       {
-        title: 'Party in London, UK',
-        from: 'at 8:00 PM',
-        color: 'indigo'
+        title: "Party in London, UK",
+        from: "at 8:00 PM",
+        color: "indigo"
       }
     ]
   },
   {
     dayNumber: 11,
-    month: 'June',
+    month: "June",
     year: 2018,
     events: [
       {
-        title: 'Socialbook Promotional',
-        from: 'at 4:00 PM',
-        color: 'green'
+        title: "Socialbook Promotional",
+        from: "at 4:00 PM",
+        color: "green"
       }
     ]
   },
   {
     dayNumber: 14,
-    month: 'June',
+    month: "June",
     year: 2018,
     events: [
       {
-        title: 'Under $30 Discount',
-        from: 'at 8:00 PM',
-        color: 'orange'
+        title: "Under $30 Discount",
+        from: "at 8:00 PM",
+        color: "orange"
       }
     ]
   },
   {
     dayNumber: 26,
-    month: 'June',
+    month: "June",
     year: 2018,
     events: [
       {
-        title: '$10 Picnic in Soho',
-        from: 'at 5:00 PM',
-        color: 'blue'
+        title: "$10 Picnic in Soho",
+        from: "at 5:00 PM",
+        color: "blue"
       }
     ]
   }
 ];
 
-const weekDayNames = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
+const weekDayNames = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
 
 const toFullDate = day => `${day.year}-${day.month}-${day.dayNumber}`;
 
@@ -156,13 +156,13 @@ const SocialProfile = () => {
 
   return (
     <div>
-      <table cellSpacing="0" className={cls['social-events-calendar']}>
+      <table cellSpacing="0" className={cls["social-events-calendar"]}>
         <thead>
           <tr>
             {weekDayNames.map(weekDay => (
               <th
                 key={weekDay}
-                className={cls['social-events-calendar-weekday']}
+                className={cls["social-events-calendar-weekday"]}
               >
                 {weekDay}
               </th>

@@ -1,7 +1,7 @@
-import React from 'react';
-import classnames from 'classnames';
+import React from "react";
+import classnames from "classnames";
 
-import cls from './messages.module.scss';
+import cls from "./messages.module.scss";
 
 export const MessageImage = ({
   className,
@@ -12,7 +12,7 @@ export const MessageImage = ({
   ...rest
 }) => (
   <div
-    className={classnames(cls['message-image'], className)}
+    className={classnames(cls["message-image"], className)}
     style={{
       ...style,
       ...(imgUrl

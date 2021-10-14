@@ -1,16 +1,16 @@
 // Libraries
-import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import React from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
 
-import Home from './Home';
+import Home from "./Home";
 
-import { ContainerVertical, ContainerHorizontal } from '@duik/it';
+import { ContainerVertical, ContainerHorizontal } from "@duik/it";
 
 // components
-import Header from './components/Header';
-import TopBarMobile from './components/TopBarMobile';
-import Navigation from './components/Navigation';
-import NavigationMobile from './components/NavigationMobile';
+import Header from "./components/Header";
+import TopBarMobile from "./components/TopBarMobile";
+import Navigation from "./components/Navigation";
+import NavigationMobile from "./components/NavigationMobile";
 
 export const Analytics = () => {
   return (

@@ -1,4 +1,4 @@
-@import '@duik/core/_vars.scss';
+@import "@duik/core/_vars.scss";
 .social-events-calendar {
   table-layout: fixed;
   width: 100%;
@@ -129,7 +129,7 @@
   left: 90%;
   z-index: 100;
   &:after {
-    content: '';
+    content: "";
     display: block;
     height: 10px;
     width: 10px;

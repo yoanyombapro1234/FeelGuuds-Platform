@@ -1,7 +1,7 @@
-import React from 'react';
-import classnames from 'classnames';
+import React from "react";
+import classnames from "classnames";
 
-import cls from './messages.module.scss';
+import cls from "./messages.module.scss";
 
 export const MessageContainer = ({
   className,
@@ -10,7 +10,7 @@ export const MessageContainer = ({
   position
 }) => (
   <div
-    className={classnames(cls['message-container'], className, {
+    className={classnames(cls["message-container"], className, {
       [cls[position]]: position
     })}
   >
@@ -21,7 +21,7 @@ export const MessageContainer = ({
 MessageContainer.defaultProps = {
   className: null,
   children: null,
-  position: 'left'
+  position: "left"
 };
 
 export default MessageContainer;

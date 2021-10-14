@@ -2,7 +2,7 @@
   &-container {
     width: 100%;
 
-    &>* {
+    & > * {
       transition: 0.4s all;
     }
   }
@@ -27,24 +27,24 @@
   @media screen and (max-width: 1200px) {
     overflow: hidden;
 
-    &>* {
+    & > * {
       transform: translateX(-270px);
     }
 
     &.Home {
-      &>* {
+      & > * {
         transform: translateX(-270px);
       }
     }
 
     &.Menu {
-      &>* {
+      & > * {
         transform: translateX(0);
       }
     }
 
     &.Chat {
-      &>* {
+      & > * {
         transform: translateX(-540px);
       }
     }

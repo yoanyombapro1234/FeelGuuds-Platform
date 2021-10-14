@@ -10,11 +10,11 @@ export default ({ items, title }, formatter) => {
         </li>
       `;
     })
-    .join('');
+    .join("");
 
   if (innerContent) {
     return `<span class="title">${title}</span> <ul>${innerContent}</ul>`;
   }
 
-  return '';
+  return "";
 };

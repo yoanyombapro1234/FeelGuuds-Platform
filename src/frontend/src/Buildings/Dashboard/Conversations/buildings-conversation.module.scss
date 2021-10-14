@@ -10,17 +10,17 @@
   .buildings-conversations {
     overflow: hidden;
 
-    &>* {
+    & > * {
       flex-basis: 100% !important;
       width: 100% !important;
       max-width: none !important;
       flex-shrink: 0 !important;
-      transition: transform .5s ease;
+      transition: transform 0.5s ease;
       transform: translateX(0);
     }
 
     &.container-active-conversation {
-      &>* {
+      & > * {
         transform: translateX(0%);
         transform: translateX(-100%);
       }

@@ -1,5 +1,5 @@
-@import '@duik/core/_vars.scss';
-$smallView: 'screen and (max-width: 1200px)';
+@import "@duik/core/_vars.scss";
+$smallView: "screen and (max-width: 1200px)";
 
 .duik-chart-js {
   display: flex;
@@ -300,7 +300,7 @@ $smallView: 'screen and (max-width: 1200px)';
     &:after,
     &:before {
       border: solid transparent;
-      content: ' ';
+      content: " ";
       height: 0;
       width: 0;
       position: absolute;

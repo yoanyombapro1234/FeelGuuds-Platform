@@ -1,26 +1,26 @@
-import React from 'react';
-import { WidgetTable } from '@duik/it';
+import React from "react";
+import { WidgetTable } from "@duik/it";
 
 const data = [
   {
-    field: '_id',
-    type: 'ObjectId',
-    desc: 'The unique identifier for the Collection'
+    field: "_id",
+    type: "ObjectId",
+    desc: "The unique identifier for the Collection"
   },
   {
-    field: 'lastUpdated',
-    type: 'Date',
-    desc: 'Date Collection was last updated'
+    field: "lastUpdated",
+    type: "Date",
+    desc: "Date Collection was last updated"
   },
   {
-    field: 'createdOn',
-    type: 'Date',
-    desc: 'Date Collection was created'
+    field: "createdOn",
+    type: "Date",
+    desc: "Date Collection was created"
   },
   {
-    field: 'name',
-    type: 'String',
-    desc: 'Name given to Collection'
+    field: "name",
+    type: "String",
+    desc: "Name given to Collection"
   }
 ];
 

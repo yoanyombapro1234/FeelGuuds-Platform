@@ -1,4 +1,4 @@
-import defaultRenderer from './renderers/default';
+import defaultRenderer from "./renderers/default";
 
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-underscore-dangle */
@@ -16,13 +16,13 @@ export default function createCustomTooltip(
     tooltipEl.style.opacity = 0; // eslint-disable-line
     return;
   }
-  const contentRoot = tooltipEl.querySelector('.tooltip__content');
+  const contentRoot = tooltipEl.querySelector(".tooltip__content");
   contentRoot.className = `tooltip__content ${tooltip.yAlign} ${tooltip.xAlign}`;
 
   // Set Text
   if (tooltip.body) {
     const items = tooltip.body
-      .map(i => i.lines[0].split(':').map(text => text.trim()))
+      .map(i => i.lines[0].split(":").map(text => text.trim()))
       .map((i, index) => ({
         color: tooltip.labelColors[index].backgroundColor,
         label: i[0],

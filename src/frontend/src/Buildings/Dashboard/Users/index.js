@@ -1,12 +1,12 @@
-import React from 'react';
-import { ContainerVertical, ContainerHorizontal } from '@duik/it';
-import classnames from 'classnames';
+import React from "react";
+import { ContainerVertical, ContainerHorizontal } from "@duik/it";
+import classnames from "classnames";
 
-import TopBar from './components/TopBar';
-import UserList from './components/UserList';
-import UserDetail from './components/UserDetail';
+import TopBar from "./components/TopBar";
+import UserList from "./components/UserList";
+import UserDetail from "./components/UserDetail";
 
-import cls from './buildings-users.module.scss';
+import cls from "./buildings-users.module.scss";
 
 const BuildingsDashboard = props => {
   const [isMobileDetailVisible, setMobileDetailVisible] = React.useState(false);
@@ -19,12 +19,12 @@ const BuildingsDashboard = props => {
   };
 
   return (
-    <ContainerVertical className={cls['buildings-users']}>
+    <ContainerVertical className={cls["buildings-users"]}>
       <TopBar />
       <ContainerHorizontal
-        className={classnames(cls['buildings-users-container'], {
+        className={classnames(cls["buildings-users-container"], {
           [cls[
-            'buildings-users-container-mobile-detail'
+            "buildings-users-container-mobile-detail"
           ]]: isMobileDetailVisible
         })}
       >

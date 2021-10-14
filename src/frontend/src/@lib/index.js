@@ -1,1 +1,1 @@
-export * from './numberFormatZeros';
+export * from "./numberFormatZeros";

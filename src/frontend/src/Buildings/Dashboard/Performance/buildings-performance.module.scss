@@ -1,4 +1,4 @@
-@import '@duik/core/_vars.scss';
+@import "@duik/core/_vars.scss";
 
 .buildings-performace-select-range {
   @media screen and (max-width: 450px) {
@@ -7,14 +7,14 @@
 }
 
 .widgetOverflow {
-  max-width: calc(100% - 30px)
+  max-width: calc(100% - 30px);
 }
 
 .buildings-performace-boxes {
   display: flex;
   flex-wrap: wrap;
 
-  &>* {
+  & > * {
     min-width: 1px;
     flex-basis: 100%;
     border-bottom: $border-default-base;
@@ -24,17 +24,17 @@
   }
 
   @media screen and (min-width: 600px) {
-    &>* {
+    & > * {
       flex-basis: 50%;
 
-      &:nth-child(2n+1) {
+      &:nth-child(2n + 1) {
         border-right: $border-default-base;
       }
     }
   }
 
   @media screen and (min-width: 1300px) {
-    &>* {
+    & > * {
       flex-basis: 25%;
 
       &:not(:last-child) {
@@ -51,7 +51,7 @@
     display: flex;
     align-items: center;
 
-    &>*:not(:last-child) {
+    & > *:not(:last-child) {
       margin-right: 15px;
     }
   }
@@ -67,20 +67,18 @@
   }
 }
 
-
-
 .buildings-performance-tables {
   display: flex;
   flex-wrap: wrap;
 
-  &>* {
+  & > * {
     flex-basis: calc(100%);
   }
 
   @media screen and (min-width: 1300px) {
     margin: -15px;
 
-    &>* {
+    & > * {
       flex-basis: calc(50% - 30px);
       margin: 15px;
     }
@@ -88,7 +86,6 @@
 }
 
 .buildings-performance-table {
-
   &-profit,
   &-invoices {
     width: 100%;
@@ -96,7 +93,7 @@
 
     td {
       padding: 1rem 15px 1rem 15px;
-      font-size: .875rem;
+      font-size: 0.875rem;
     }
 
     td:last-child {
@@ -126,7 +123,7 @@
     td:first-child {
       padding-top: 9px;
       padding-bottom: 9px;
-      font-size: .875rem;
+      font-size: 0.875rem;
       line-height: 1.375rem;
     }
 
@@ -148,7 +145,7 @@
         padding-right: 44px !important;
 
         &:after {
-          content: '';
+          content: "";
           display: block;
           position: absolute;
           height: 6px;

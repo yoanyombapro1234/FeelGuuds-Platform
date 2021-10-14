@@ -1,14 +1,14 @@
-import * as React from 'react';
-import prism from 'prismjs';
-import classnames from 'classnames';
+import * as React from "react";
+import prism from "prismjs";
+import classnames from "classnames";
 
-import 'prismjs/components/prism-javascript';
-import 'prismjs/components/prism-jsx';
-import 'prismjs/components/prism-markup';
-import 'prismjs/components/prism-css';
-import 'prismjs/components/prism-json';
+import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-jsx";
+import "prismjs/components/prism-markup";
+import "prismjs/components/prism-css";
+import "prismjs/components/prism-json";
 
-import './atom-dark.scss';
+import "./atom-dark.scss";
 export class CodeHighlight extends React.Component {
   static defaultProps = {
     code: null,
@@ -37,7 +37,7 @@ export class CodeHighlight extends React.Component {
     return (
       <pre
         ref={this.preRef}
-        className={classnames('react-prism', `language-${language}`, className)}
+        className={classnames("react-prism", `language-${language}`, className)}
         {...rest}
       >
         <code>{code}</code>

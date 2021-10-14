@@ -24,60 +24,60 @@ import { CartPage } from "../CartPage";
 // import { Socialio } from 'Socialio';
 import { useMenuVisibility } from "../@utils";
 import {
-    AuthenticationSignUpPage,
-    AuthenticationSignInPage,
+  AuthenticationSignUpPage,
+  AuthenticationSignInPage
 } from "../@components";
 import { Home } from "../Home";
 import { ProductPage } from "../ProductPage";
 
 import Navigator from "./Navigator";
 
-const RootRoute = (props) => {
-    const uiContext = React.useContext(UiContext);
+const RootRoute = props => {
+  const uiContext = React.useContext(UiContext);
 
-    React.useEffect(() => {
-        // on route change, we hide the menus
-        uiContext.menu.handleClose();
-        uiContext.filter.handleClose();
-    }, [props.location.pathname]); // eslint-disable-line
+  React.useEffect(() => {
+    // on route change, we hide the menus
+    uiContext.menu.handleClose();
+    uiContext.filter.handleClose();
+  }, [props.location.pathname]); // eslint-disable-line
 
-    return (
-        <>
-            <Navigator />
-            <Switch>
-                <Route path='/analytics' component={Analytics} />
-                <Route path='/buildings' component={Buildings} />
-                <Route path='/tutorials' component={Tutorials} />
-                <Route path='/knowledge' component={Knowledge} />
-                {/*} <Route path="/social" component={Socialio} /> */}
-                <Route path='/sign-up' component={AuthenticationSignUpPage} />
-                <Route path='/sign-in' component={AuthenticationSignInPage} />
-                <Route path='/home' component={Home} />
-                <Route path='/product/:id' component={ProductPage} />
-                <Route path='/cart/:id?' component={CartPage} />
-                <Route path='/info' component={AppDirectory} />
-                <Redirect to='/home' />
-            </Switch>
-        </>
-    );
+  return (
+    <>
+      <Navigator />
+      <Switch>
+        <Route path="/analytics" component={Analytics} />
+        <Route path="/buildings" component={Buildings} />
+        <Route path="/tutorials" component={Tutorials} />
+        <Route path="/knowledge" component={Knowledge} />
+        {/*} <Route path="/social" component={Socialio} /> */}
+        <Route path="/sign-up" component={AuthenticationSignUpPage} />
+        <Route path="/sign-in" component={AuthenticationSignInPage} />
+        <Route path="/home" component={Home} />
+        <Route path="/product/:id" component={ProductPage} />
+        <Route path="/cart/:id?" component={CartPage} />
+        <Route path="/info" component={AppDirectory} />
+        <Redirect to="/home" />
+      </Switch>
+    </>
+  );
 };
 
 const Application = () => {
-    const menu = useMenuVisibility(false);
-    const filter = useMenuVisibility(false);
+  const menu = useMenuVisibility(false);
+  const filter = useMenuVisibility(false);
 
-    const contextValue = {
-        menu,
-        filter,
-    };
+  const contextValue = {
+    menu,
+    filter
+  };
 
-    return (
-        <UiContext.Provider value={contextValue}>
-            <BrowserRouter>
-                <Route path='/' component={RootRoute} />
-            </BrowserRouter>
-        </UiContext.Provider>
-    );
+  return (
+    <UiContext.Provider value={contextValue}>
+      <BrowserRouter>
+        <Route path="/" component={RootRoute} />
+      </BrowserRouter>
+    </UiContext.Provider>
+  );
 };
 
 export default Application;

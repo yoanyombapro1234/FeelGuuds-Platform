@@ -1,5 +1,5 @@
-import React from 'react';
-import cls from './btnswitch.module.scss';
+import React from "react";
+import cls from "./btnswitch.module.scss";
 
 export const BtnSwitchTheme = () => {
   const [isDark, setDark] = React.useState(false);

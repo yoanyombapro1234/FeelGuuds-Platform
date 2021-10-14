@@ -1,1 +1,1 @@
-export default ['Explore', 'Tutorials', 'Courses', 'Projects', 'Resources'];
+export default ["Explore", "Tutorials", "Courses", "Projects", "Resources"];

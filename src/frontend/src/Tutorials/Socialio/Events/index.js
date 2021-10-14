@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Icon from '@duik/icon';
+import * as React from "react";
+import Icon from "@duik/icon";
 import {
   ContainerVertical,
   ScrollArea,
@@ -13,11 +13,11 @@ import {
   TopBarSection,
   TopBarTitle,
   ButtonGroup
-} from '@duik/it';
+} from "@duik/it";
 
-import Calendar from './components/Calendar';
+import Calendar from "./components/Calendar";
 
-import cls from './social-events.module.scss';
+import cls from "./social-events.module.scss";
 
 const SocialProfile = () => (
   <ContainerVertical>
@@ -27,14 +27,14 @@ const SocialProfile = () => (
           <Avatar
             avatarPlaceholder={{
               content: (
-                <span role="img" style={{ fontSize: '.785rem' }}>
-                  {'✈️'}
+                <span role="img" style={{ fontSize: ".785rem" }}>
+                  {"✈️"}
                 </span>
               )
             }}
-            className={cls['social-events-title-icon']}
+            className={cls["social-events-title-icon"]}
             style={{
-              marginRight: '15px'
+              marginRight: "15px"
             }}
           />
           Subscribed Businesses & Communities
@@ -43,7 +43,7 @@ const SocialProfile = () => (
       <TopBarSection>
         <div>
           <Dropdown
-            className={cls['social-events-dropdown-filter']}
+            className={cls["social-events-dropdown-filter"]}
             buttonText={<>Joined</>}
             menuPosition="bottom-left"
           >
@@ -54,7 +54,7 @@ const SocialProfile = () => (
             buttonText={
               <>
                 <Icon mr>send_round</Icon>
-                <span className={cls['social-events-dropdown-share-text']}>
+                <span className={cls["social-events-dropdown-share-text"]}>
                   Share
                 </span>
               </>
@@ -67,41 +67,41 @@ const SocialProfile = () => (
         </div>
       </TopBarSection>
     </TopBar>
-    <ScrollArea className={cls['social-events-content']}>
-      <Widget className={cls['social-events-widget-calendar']}>
+    <ScrollArea className={cls["social-events-content"]}>
+      <Widget className={cls["social-events-widget-calendar"]}>
         <WidgetHeader>
           <div>
-            <h3 className={cls['social-events-calendar-title']}>Calendar</h3>
+            <h3 className={cls["social-events-calendar-title"]}>Calendar</h3>
           </div>
 
           <div>
             <ButtonGroup>
               <Button square transparent>
-                <Icon className={cls['calendar-btn-arrow']}>arrow_left</Icon>
+                <Icon className={cls["calendar-btn-arrow"]}>arrow_left</Icon>
               </Button>
               <Button transparent>
                 June 2018
                 <Icon ml>dropdown_arrow</Icon>
               </Button>
               <Button square transparent>
-                <Icon className={cls['calendar-btn-arrow']}>arrow_right</Icon>
+                <Icon className={cls["calendar-btn-arrow"]}>arrow_right</Icon>
               </Button>
             </ButtonGroup>
             <Button
-              className={cls['social-events-add-lg']}
+              className={cls["social-events-add-lg"]}
               primary
               style={{
-                marginLeft: '10px'
+                marginLeft: "10px"
               }}
             >
               <Icon mr>add</Icon> Create Event
             </Button>
             <Button
-              className={cls['social-events-add-sm']}
+              className={cls["social-events-add-sm"]}
               primary
               square
               style={{
-                marginLeft: '10px'
+                marginLeft: "10px"
               }}
             >
               <Icon>add</Icon>

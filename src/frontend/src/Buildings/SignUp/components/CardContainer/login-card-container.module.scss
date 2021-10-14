@@ -1,11 +1,11 @@
-@import '@duik/core/_vars.scss';
+@import "@duik/core/_vars.scss";
 
 .login-card-container {
   display: flex;
   margin-bottom: 30px;
   justify-content: space-between;
 
-  &>* {
+  & > * {
     flex-basis: calc(33% - 7.5px);
   }
 }
@@ -15,7 +15,7 @@
   margin-bottom: 30px;
   justify-content: space-between;
 
-  &>* {
+  & > * {
     flex-basis: calc(33% - 7.5px);
   }
 }

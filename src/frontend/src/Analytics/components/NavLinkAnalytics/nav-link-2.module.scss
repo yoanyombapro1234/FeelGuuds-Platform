@@ -1,7 +1,7 @@
-@import '@duik/core/_vars.scss';
+@import "@duik/core/_vars.scss";
 
 .nav-link-analytics {
-  font-size: .875rem;
+  font-size: 0.875rem;
   color: $text-main;
   display: block;
   min-height: 60px;
@@ -44,7 +44,7 @@
   &:hover {
     .nav-link-analytics {
       &-icon {
-        color: rgba($color-primary-rgb, .8);
+        color: rgba($color-primary-rgb, 0.8);
       }
     }
   }

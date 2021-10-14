@@ -1,22 +1,19 @@
-@import '@duik/core/_vars.scss';
+@import "@duik/core/_vars.scss";
 
 .app-directory {
   &-screen-count {
-
     font-weight: 500;
     color: $color-primary;
   }
 
-
   &-item {
     position: relative;
     overflow: hidden;
-    transition: .2s all;
+    transition: 0.2s all;
 
     &-image {
       width: 100%;
     }
-
 
     &-new {
       position: absolute;
@@ -27,23 +24,23 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #1665D8;
+      background: #1665d8;
       color: $text-on-color;
       font-weight: 500;
-      font-size: .75rem;
+      font-size: 0.75rem;
       transform: rotate(45deg);
       letter-spacing: 1px;
 
       &:before,
       &:after {
-        content: '';
+        content: "";
         display: block;
         position: absolute;
         width: 0;
         height: 0;
         border-style: solid;
         border-width: 0 30px 30px 30px;
-        border-color: transparent transparent #1665D8 transparent;
+        border-color: transparent transparent #1665d8 transparent;
         top: 0;
         right: 100%;
         transform: translateX(30px);
@@ -65,12 +62,12 @@
       font-weight: 700;
       color: $text-on-color;
       opacity: 0;
-      transition: .2s;
+      transition: 0.2s;
     }
 
     &:before {
       position: absolute;
-      content: '';
+      content: "";
       display: block;
       top: 0;
       left: 0;
@@ -78,7 +75,7 @@
       width: 100%;
       background: rgba(0, 0, 0, 0.3);
       opacity: 0;
-      transition: .2s;
+      transition: 0.2s;
     }
 
     &:hover {
@@ -104,17 +101,16 @@
   justify-content: center;
   margin: 4rem 0;
 
-  &>* {
+  & > * {
     flex-basis: calc(50% - 30px);
   }
 
   @media screen and (max-width: 500px) {
-    &>* {
+    & > * {
       flex-basis: calc(100% - 30px);
     }
   }
 }
-
 
 .app-directory-content-inner {
   padding: 0 30px;
@@ -142,10 +138,10 @@
     font-size: 4rem;
     font-weight: 400;
 
-    &+p {
+    & + p {
       font-size: 1.4rem;
 
-      &+* {
+      & + * {
         margin-top: 9rem;
       }
     }
@@ -160,5 +156,5 @@
 
 .app-directory-comming-soon {
   transform: translateY(-2rem);
-  opacity: .7;
+  opacity: 0.7;
 }

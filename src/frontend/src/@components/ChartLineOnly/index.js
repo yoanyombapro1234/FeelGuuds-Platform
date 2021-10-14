@@ -1,7 +1,7 @@
-import React from 'react';
-import defaultsDeep from 'lodash.defaultsdeep';
+import React from "react";
+import defaultsDeep from "lodash.defaultsdeep";
 
-import Chart from '../Chart';
+import Chart from "../Chart";
 
 const defaultOptions = {
   // disable tooltips
@@ -20,7 +20,7 @@ const defaultOptions = {
         gridLines: {
           drawBorder: false,
           drawTicks: false,
-          color: 'transparent',
+          color: "transparent",
           zeroLineWidth: 1
         }
       }
@@ -33,7 +33,7 @@ const defaultOptions = {
         gridLines: {
           drawBorder: false,
           drawTicks: false,
-          color: 'transparent',
+          color: "transparent",
           zeroLineWidth: 1
         }
       }
@@ -45,7 +45,7 @@ const defaultDatasetOptions = {
   pointRadius: 0,
   lineTension: 0,
   borderWidth: 2,
-  pointStyle: 'line'
+  pointStyle: "line"
 };
 
 const mapDefaultDatasetOptions = data => ({

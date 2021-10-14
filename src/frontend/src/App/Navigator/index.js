@@ -1,10 +1,10 @@
-import React from 'react';
-import classnames from 'classnames';
-import { Link, withRouter } from 'react-router-dom';
-import Icon from '@duik/icon';
-import { OuterEventsHandler, NavLink, Divider } from '@duik/it';
+import React from "react";
+import classnames from "classnames";
+import { Link, withRouter } from "react-router-dom";
+import Icon from "@duik/icon";
+import { OuterEventsHandler, NavLink, Divider } from "@duik/it";
 
-import cls from './navigator.module.scss';
+import cls from "./navigator.module.scss";
 
 const Navigator = props => {
   const {
@@ -31,7 +31,7 @@ const Navigator = props => {
 
   return (
     <OuterEventsHandler
-      className={classnames(cls['navigator-container'])}
+      className={classnames(cls["navigator-container"])}
       onOuterEvent={isExpanded ? handleHide : null}
     >
       {isDark && (

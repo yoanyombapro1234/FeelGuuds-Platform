@@ -1,15 +1,11 @@
-@import '@duik/core/_vars.scss';
-
+@import "@duik/core/_vars.scss";
 
 .analytics-card-social-traffic {
-
-
   &-visitors {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 300px;
-
   }
 
   &-progress {
@@ -20,15 +16,14 @@
   }
 
   &-table {
-
     th,
     td {
       &:nth-child(2) {
         min-width: 220px;
       }
     }
-td {
-  height: 70px;
-}
+    td {
+      height: 70px;
+    }
   }
 }

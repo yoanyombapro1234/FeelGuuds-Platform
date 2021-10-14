@@ -1,31 +1,31 @@
 export default [
   {
-    text: 'Home',
-    to: '',
-    exact: true,
+    text: "Home",
+    to: "",
+    exact: true
   },
   {
-    text: 'Communities',
-    to: '/discussion',
-    exact: true,
+    text: "Communities",
+    to: "/discussion",
+    exact: true
   },
   {
-    text: 'Subscribed Accounts',
-    to: '/friends',
-    exact: true,
+    text: "Subscribed Accounts",
+    to: "/friends",
+    exact: true
   },
   {
-    text: 'Community Events',
-    to: '/events',
+    text: "Community Events",
+    to: "/events",
     exact: true,
-    count: 8,
+    count: 8
   },
   {
-    text: 'Discovery',
-    to: '/videos',
-    exact: true,
-	},
-	/*
+    text: "Discovery",
+    to: "/videos",
+    exact: true
+  }
+  /*
   {
     text: 'Photos',
     to: '/photos',
@@ -37,4 +37,4 @@ export default [
     exact: true,
 	},
 	*/
-]
+];

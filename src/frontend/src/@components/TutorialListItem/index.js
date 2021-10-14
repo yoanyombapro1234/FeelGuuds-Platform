@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import React from "react";
+import PropTypes from "prop-types";
+import classnames from "classnames";
 
-import { Avatar } from '@duik/it';
-import Icon from '@duik/icon';
+import { Avatar } from "@duik/it";
+import Icon from "@duik/icon";
 
-import IconText from '../IconText';
-import StarRating from '../StarRating';
+import IconText from "../IconText";
+import StarRating from "../StarRating";
 
-import cls from './tutorial-list-item.module.scss';
+import cls from "./tutorial-list-item.module.scss";
 
 export const TutorialListItem = ({
   duration,
@@ -24,17 +24,17 @@ export const TutorialListItem = ({
   Component,
   ...rest
 }) => (
-  <Component className={classnames(cls['tutorial-item'], className)} {...rest}>
+  <Component className={classnames(cls["tutorial-item"], className)} {...rest}>
     <div
-      className={cls['tutorial-item-cover']}
+      className={cls["tutorial-item-cover"]}
       style={{
         backgroundImage: `url(${imgUrl})`
       }}
     />
-    <div className={cls['tutorial-item-content']}>
+    <div className={cls["tutorial-item-content"]}>
       <h3>{title}</h3>
       <p>{description}</p>
-      <div className={cls['tutorial-item-meta']}>
+      <div className={cls["tutorial-item-meta"]}>
         <Avatar
           imgUrl={author.imgUrl}
           name={author.name}
@@ -43,11 +43,11 @@ export const TutorialListItem = ({
         <IconText icon={<Icon>clock</Icon>}>{duration}</IconText>
       </div>
     </div>
-    <div className={cls['tutorial-item-extra']}>
+    <div className={cls["tutorial-item-extra"]}>
       <div>
         <IconText
           highlight={liked}
-          icon={<Icon>{liked ? 'love-fill' : 'love'}</Icon>}
+          icon={<Icon>{liked ? "love-fill" : "love"}</Icon>}
         >
           {likes}
         </IconText>
@@ -79,7 +79,7 @@ TutorialListItem.defaultProps = {
   liked: null,
   likes: 0,
   comments: 0,
-  Component: 'div'
+  Component: "div"
 };
 
 export default TutorialListItem;

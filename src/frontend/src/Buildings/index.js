@@ -1,8 +1,8 @@
-import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import React from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
 
-import SignUp from './SignUp';
-import Dashboard from './Dashboard';
+import SignUp from "./SignUp";
+import Dashboard from "./Dashboard";
 
 export const Buildings = props => {
   const {

@@ -25,8 +25,8 @@ pre.refractor {
 	* based on: https://github.com/MoOx/sass-prism-theme-base by Maxime Thirouin ~ MoOx --> http://moox.fr/ , which is Loosely based on Monokai textmate theme by http://www.monokai.nl/
 	* license: MIT; http://moox.mit-license.org/
 	*/
-code[class*='language-'],
-pre[class*='language-'] {
+code[class*="language-"],
+pre[class*="language-"] {
   -moz-tab-size: 2;
   -o-tab-size: 2;
   tab-size: 2;
@@ -38,18 +38,18 @@ pre[class*='language-'] {
   color: #9cdcfe;
   /* background: #282c34; */
   background: #303136;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
   font-size: 0.75rem;
   line-height: 1.25rem;
 }
 
-:not(pre) > code[class*='language-'],
-pre[class*='language-'] {
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
   background: #252529;
 }
 
 /* Inline code */
-:not(pre) > code[class*='language-'] {
+:not(pre) > code[class*="language-"] {
   padding: 0.1em;
   border-radius: 0.3em;
   white-space: normal;

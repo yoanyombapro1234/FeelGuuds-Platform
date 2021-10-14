@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { Select } from '@duik/it';
+import { Select } from "@duik/it";
 
 const options = [
   {

@@ -1,56 +1,55 @@
 export default [
   {
-    text: 'CMS API Reference',
+    text: "CMS API Reference"
   },
   {
-    text: 'Authentication',
+    text: "Authentication"
   },
   {
-    text: 'Meta',
+    text: "Meta"
   },
   {
-    text: 'Sites',
+    text: "Sites"
   },
   {
-    text: 'Domains',
+    text: "Domains"
   },
   {
-    text: 'Collections',
+    text: "Collections",
     items: [
       {
-        text: 'Model',
+        text: "Model"
       },
       {
-        text: 'List Collections',
+        text: "List Collections"
       },
       {
-        text: 'Get Collections',
-      },
-    ],
+        text: "Get Collections"
+      }
+    ]
   },
   {
-    text: 'Fields',
+    text: "Fields"
   },
   {
-    text: 'Items',
+    text: "Items"
   },
   {
-    text: 'Images',
+    text: "Images"
   },
   {
-    text: 'Webhooks',
+    text: "Webhooks"
   },
   {
-    text: 'Errors',
+    text: "Errors"
   },
   {
-    text: 'Rate Limits',
+    text: "Rate Limits"
   },
   {
-    text: 'API Versions',
+    text: "API Versions"
   },
   {
-    text: 'Changelog',
-  },
-
-]
+    text: "Changelog"
+  }
+];

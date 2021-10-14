@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 
 import {
   NavSectionTitle,
@@ -6,12 +6,12 @@ import {
   Avatar,
   NavPanel,
   ScrollArea
-} from '@duik/it';
+} from "@duik/it";
 
-import AvatarMenuContainer from './AvatarMenuContainer';
-import people from '../assets/avatarPeople';
-import avatarYourPages from '../assets/avatarYourPages';
-import avatarGroups from '../assets/avatarGroups';
+import AvatarMenuContainer from "./AvatarMenuContainer";
+import people from "../assets/avatarPeople";
+import avatarYourPages from "../assets/avatarYourPages";
+import avatarGroups from "../assets/avatarGroups";
 
 const SocialChat = () => (
   <NavPanel positionRight>

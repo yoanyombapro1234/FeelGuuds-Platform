@@ -1,4 +1,4 @@
-@import '@duik/core/_vars.scss';
+@import "@duik/core/_vars.scss";
 .social-stories {
   padding: 20px;
   width: 100%;
@@ -22,7 +22,7 @@
   display: inline-block;
   border-radius: 4px;
   &:after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     top: 0;

@@ -1,7 +1,7 @@
-import React from 'react';
-import classnames from 'classnames';
+import React from "react";
+import classnames from "classnames";
 
-import cls from './status-dot.module.scss';
+import cls from "./status-dot.module.scss";
 
 // type StatusDotProps = {
 //   className?: String,
@@ -20,7 +20,7 @@ export const StatusDot = ({
   ...rest
 }) => (
   <span
-    className={classnames(cls['status-dot'], className, {
+    className={classnames(cls["status-dot"], className, {
       [color]: color
     })}
     {...rest}
@@ -32,7 +32,7 @@ export const StatusDot = ({
 StatusDot.defaultProps = {
   className: null,
   children: null,
-  color: 'green'
+  color: "green"
 };
 
 export default StatusDot;

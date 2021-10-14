@@ -1,13 +1,13 @@
-import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import React from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
 
-import { ContainerVertical, ContainerHorizontal } from '@duik/it';
+import { ContainerVertical, ContainerHorizontal } from "@duik/it";
 
-import PageAnimations from './Animations';
+import PageAnimations from "./Animations";
 
-import Filters from './components/Filters';
-import TopBar from './components/TopBar';
-import NavigationLeft from './components/NavigationLeft';
+import Filters from "./components/Filters";
+import TopBar from "./components/TopBar";
+import NavigationLeft from "./components/NavigationLeft";
 
 export const Tutorials = () => (
   <ContainerVertical>

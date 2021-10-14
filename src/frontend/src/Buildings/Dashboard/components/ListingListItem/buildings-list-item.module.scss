@@ -1,4 +1,4 @@
-@import '@duik/core/_vars.scss';
+@import "@duik/core/_vars.scss";
 
 .buildings-list-item {
   display: flex;
@@ -29,7 +29,7 @@
 
   &-text {
     color: $text-secondary;
-    font-size: .875rem;
+    font-size: 0.875rem;
     line-height: 1.375rem;
     margin-top: 5px;
   }
@@ -40,7 +40,6 @@
     align-items: center;
     margin-top: 5px;
     height: 20px;
-
   }
 
   &-price {
@@ -51,14 +50,14 @@
   }
 
   &-status {
-    font-size: .875rem;
+    font-size: 0.875rem;
     color: $color-primary;
   }
 
   &:hover,
   &:global(.active) {
     /* Active Highlight: */
-    background: #F6F9FD;
-    box-shadow: inset 3px 0 0 0 #4388ED;
+    background: #f6f9fd;
+    box-shadow: inset 3px 0 0 0 #4388ed;
   }
 }

@@ -1,12 +1,16 @@
-import React from 'react';
-import classnames from 'classnames/dedupe';
+import React from "react";
+import classnames from "classnames/dedupe";
 
-import cls from './authentication-card-container.module.scss';
+import cls from "./authentication-card-container.module.scss";
 
-export const AuthenticationCardContainer = ({ children, className, ...rest }) => {
+export const AuthenticationCardContainer = ({
+  children,
+  className,
+  ...rest
+}) => {
   return (
     <div
-      className={classnames(cls['login-card-container'], className)}
+      className={classnames(cls["login-card-container"], className)}
       {...rest}
     >
       {children}

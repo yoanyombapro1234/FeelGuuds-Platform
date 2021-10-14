@@ -1,19 +1,19 @@
-import React from 'react';
+import React from "react";
 
-import { WidgetTable } from '@duik/it';
+import { WidgetTable } from "@duik/it";
 
 const data = [
   {
-    name: '_archived',
-    type: 'Boolean',
+    name: "_archived",
+    type: "Boolean",
     editable: true,
-    desc: 'Items set to archived will not be published'
+    desc: "Items set to archived will not be published"
   },
   {
-    name: '_draft',
-    type: 'Boolean',
+    name: "_draft",
+    type: "Boolean",
     editable: false,
-    desc: 'Items set to draft will not be published'
+    desc: "Items set to draft will not be published"
   }
 ];
 
@@ -37,7 +37,7 @@ const DocTable2 = () => (
             <code>{item.type}</code>
           </td>
           <td>
-            <code>{item.editable ? 'true' : 'false'}</code>
+            <code>{item.editable ? "true" : "false"}</code>
           </td>
           <td>{item.desc}</td>
         </tr>

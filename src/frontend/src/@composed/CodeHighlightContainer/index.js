@@ -1,10 +1,10 @@
-import classnames from 'classnames';
-import * as React from 'react';
+import classnames from "classnames";
+import * as React from "react";
 
-import UikCodeHighlight from '../CodeHighlight';
-import { Tabs, TabItem } from '@duik/it';
+import UikCodeHighlight from "../CodeHighlight";
+import { Tabs, TabItem } from "@duik/it";
 
-import cls from './content-code.module.scss';
+import cls from "./content-code.module.scss";
 
 // type CodeHighlightContainerProps = {
 //   className?: ?String,
@@ -51,18 +51,18 @@ export class CodeHighlightContainer extends React.PureComponent {
 
     return (
       <div
-        className={classnames(cls['code-highlight-container'], className, {
-          [cls['code-highlight-container-max-height']]: maxHeight
+        className={classnames(cls["code-highlight-container"], className, {
+          [cls["code-highlight-container-max-height"]]: maxHeight
         })}
         {...rest}
       >
         {languages.length > 1 && (
-          <Tabs sm className={cls['code-highlight-container-tabs']}>
+          <Tabs sm className={cls["code-highlight-container-tabs"]}>
             {languages.map(lang => (
               <TabItem
                 key={lang}
                 className={classnames(
-                  cls['code-highlight-container-tab-item'],
+                  cls["code-highlight-container-tab-item"],
                   {
                     active: lang === activeLang
                   }
@@ -75,7 +75,7 @@ export class CodeHighlightContainer extends React.PureComponent {
             ))}
           </Tabs>
         )}
-        <div className={cls['code-highlight-container-content']}>
+        <div className={cls["code-highlight-container-content"]}>
           <UikCodeHighlight
             key={activeLang}
             code={data[activeLang]}

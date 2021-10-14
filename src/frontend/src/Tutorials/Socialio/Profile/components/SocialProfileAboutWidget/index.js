@@ -1,11 +1,11 @@
-import classnames from 'classnames';
-import * as React from 'react';
+import classnames from "classnames";
+import * as React from "react";
 
-import { Widget, WidgetHeader } from '@duik/it';
+import { Widget, WidgetHeader } from "@duik/it";
 
-import cls from './social-about.module.scss';
+import cls from "./social-about.module.scss";
 
-import SocialProfileAboutItem from '../SocialProfileAboutItem';
+import SocialProfileAboutItem from "../SocialProfileAboutItem";
 
 const SocialProfileAboutWidget = ({
   className,
@@ -16,13 +16,13 @@ const SocialProfileAboutWidget = ({
   ...rest
 }) => (
   <Widget
-    className={classnames(cls['social-profile-about'], className)}
+    className={classnames(cls["social-profile-about"], className)}
     {...rest}
   >
     <WidgetHeader>
       <h3>About</h3>
     </WidgetHeader>
-    <div className={cls['social-profile-about-list']}>
+    <div className={cls["social-profile-about-list"]}>
       {data.map((item, index) => (
         <SocialProfileAboutItem key={index} data={item} />
       ))}

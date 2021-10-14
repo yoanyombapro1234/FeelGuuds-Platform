@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { NavLink as RNavLink } from 'react-router-dom';
+import * as React from "react";
+import { NavLink as RNavLink } from "react-router-dom";
 
-import { NavSectionTitle, NavSection, NavLink, NavPanel } from '@duik/it';
+import { NavSectionTitle, NavSection, NavLink, NavPanel } from "@duik/it";
 
-import menuLinks from '../assets/menuLinks';
-import menuFavourites from '../assets/menuFavourites';
+import menuLinks from "../assets/menuLinks";
+import menuFavourites from "../assets/menuFavourites";
 
 const SocialNavigation = () => (
   <NavPanel>

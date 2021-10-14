@@ -1,22 +1,15 @@
-import React from 'react'
+import React from "react";
 
-import {
-  TopBarSection,
-  TopBarTitle,
-} from '@duik/it'
+import { TopBarSection, TopBarTitle } from "@duik/it";
 
-import BuildingsTopBar from '../../../components/TopBar'
-
+import BuildingsTopBar from "../../../components/TopBar";
 
 const BuildingsListingTopBar = props => (
-  <BuildingsTopBar { ...props }>
+  <BuildingsTopBar {...props}>
     <TopBarSection>
-      <TopBarTitle>
-        Conversations
-      </TopBarTitle>
+      <TopBarTitle>Conversations</TopBarTitle>
     </TopBarSection>
   </BuildingsTopBar>
-)
+);
 
-
-export default BuildingsListingTopBar
+export default BuildingsListingTopBar;

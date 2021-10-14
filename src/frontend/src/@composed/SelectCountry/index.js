@@ -1,6 +1,6 @@
-import React from 'react';
-import { Select } from '@duik/it';
-import optionsCountries from './optionsCountries';
+import React from "react";
+import { Select } from "@duik/it";
+import optionsCountries from "./optionsCountries";
 
 export const SelectCountry = props => {
   const [value, setValue] = React.useState(optionsCountries[0]);

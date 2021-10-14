@@ -1,11 +1,11 @@
-import * as React from 'react';
+import * as React from "react";
 
-import { TabItem, Tabs, WidgetHeader, Widget } from '@duik/it';
+import { TabItem, Tabs, WidgetHeader, Widget } from "@duik/it";
 
-import SocialProfileFriendListItem from '../SocialProfileFriendListItem';
-import SocialProfileFriendList from '../SocialProfileFriendList';
+import SocialProfileFriendListItem from "../SocialProfileFriendListItem";
+import SocialProfileFriendList from "../SocialProfileFriendList";
 
-import cls from './social-profile-friends.module.scss';
+import cls from "./social-profile-friends.module.scss";
 
 const SocialProfileFriendsWidget = ({
   imgUrl,
@@ -15,27 +15,27 @@ const SocialProfileFriendsWidget = ({
   ...rest
 }) => (
   <Widget {...rest}>
-    <WidgetHeader className={cls['social-profile-friends-card-header']}>
+    <WidgetHeader className={cls["social-profile-friends-card-header"]}>
       <h3>Friends</h3>
     </WidgetHeader>
     <Tabs>
       {[
         {
-          text: 'All Friends',
+          text: "All Friends",
           extra: 580
         },
         {
-          text: 'Subscribed Communities',
+          text: "Subscribed Communities",
           extra: 120
         },
         {
-          text: 'Friend Requests',
+          text: "Friend Requests",
           extra: null
         }
       ].map(item => (
         <TabItem
           key={item.text}
-          className={item.text === 'All Friends' && 'active'}
+          className={item.text === "All Friends" && "active"}
           {...item}
         >
           {item.text}

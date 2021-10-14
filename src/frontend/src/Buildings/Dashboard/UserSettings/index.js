@@ -1,5 +1,5 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 /* eslint-disable max-len */
 
@@ -19,40 +19,40 @@ import {
   ContainerVertical,
   ScrollArea,
   Progress
-} from '@duik/it';
+} from "@duik/it";
 
-import TopBar from './components/TopBar';
-import cls from './buildings-user.module.scss';
+import TopBar from "./components/TopBar";
+import cls from "./buildings-user.module.scss";
 
-import optionsCountries from './assets/optionsCountries';
-import optionsCities from './assets/optionsCities';
+import optionsCountries from "./assets/optionsCountries";
+import optionsCities from "./assets/optionsCities";
 
-import ImgUserProfile from './assets/profilePic.jpg';
+import ImgUserProfile from "./assets/profilePic.jpg";
 
 const links = [
   {
-    text: 'Account Settings',
-    to: '/settings'
+    text: "Account Settings",
+    to: "/settings"
   },
   {
-    text: 'Teams',
-    to: '/teams'
+    text: "Teams",
+    to: "/teams"
   },
   {
-    text: 'Password',
-    to: '/password'
+    text: "Password",
+    to: "/password"
   },
   {
-    text: 'Invoices',
-    to: '/invoices'
+    text: "Invoices",
+    to: "/invoices"
   },
   {
-    text: 'Integrations',
-    to: '/integrations'
+    text: "Integrations",
+    to: "/integrations"
   },
   {
-    text: 'Privacy',
-    to: '/privacy'
+    text: "Privacy",
+    to: "/privacy"
   }
 ];
 
@@ -67,30 +67,30 @@ const BuildingsDashboard = () => {
     <ContainerVertical>
       <TopBar
         rightEl={
-          <div className={cls['buildings-user-progress-container']}>
+          <div className={cls["buildings-user-progress-container"]}>
             <p>Profile Completeness: 70%</p>
-            <Progress className={cls['buildings-user-progress']} fill={0.7} />
+            <Progress className={cls["buildings-user-progress"]} fill={0.7} />
           </div>
         }
       />
       <ScrollArea>
-        <div className={cls['buildings-user-layout']}>
-          <WidgetContainer className={cls['buildings-user-sub-nav']}>
+        <div className={cls["buildings-user-layout"]}>
+          <WidgetContainer className={cls["buildings-user-sub-nav"]}>
             <Widget>
               <div
-                className={cls['buildings-user-profile-pic']}
+                className={cls["buildings-user-profile-pic"]}
                 style={{ backgroundImage: `url("${ImgUserProfile}")` }}
               />
-              <WidgetContent className={cls['buildings-user-meta']}>
+              <WidgetContent className={cls["buildings-user-meta"]}>
                 <h2>Ethel Harvey</h2>
                 <p>
-                  {'Caracas, Venezuela'}
+                  {"Caracas, Venezuela"}
                   <br />
-                  {'Your time: 4:32 PM (GMT-4)'}
+                  {"Your time: 4:32 PM (GMT-4)"}
                 </p>
               </WidgetContent>
               <Divider />
-              <div className={cls['buildings-user-menu']}>
+              <div className={cls["buildings-user-menu"]}>
                 <NavSection>
                   {links.map(link => (
                     <NavLinkKit

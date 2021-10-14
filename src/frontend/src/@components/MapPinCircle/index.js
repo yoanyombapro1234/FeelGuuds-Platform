@@ -1,11 +1,11 @@
-import React from 'react';
-import classnames from 'classnames';
+import React from "react";
+import classnames from "classnames";
 
-import cls from './map-pin-circle.module.scss';
+import cls from "./map-pin-circle.module.scss";
 
 export const MapPinCircle = ({ children, className, color, ...rest }) => (
   <div
-    className={classnames(cls['map-pin-circle'], className, {
+    className={classnames(cls["map-pin-circle"], className, {
       [color]: color
     })}
     {...rest}
@@ -17,7 +17,7 @@ export const MapPinCircle = ({ children, className, color, ...rest }) => (
 MapPinCircle.defaultProps = {
   className: null,
   children: null,
-  color: 'blue'
+  color: "blue"
 };
 
 export default MapPinCircle;

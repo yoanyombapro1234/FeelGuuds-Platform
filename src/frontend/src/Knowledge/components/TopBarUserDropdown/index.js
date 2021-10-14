@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import { Dropdown } from '@duik/it';
+import { Dropdown } from "@duik/it";
 
-import DisplayComponent from './DisplayComponent';
+import DisplayComponent from "./DisplayComponent";
 
 const TopBarUserDropdown = ({ className, children, user, imgUrl, ...rest }) => (
   <Dropdown ButtonComponent={DisplayComponent} buttonProps={user} {...rest}>

@@ -1,20 +1,20 @@
-import React from 'react';
+import React from "react";
 
-import { Select } from '@duik/it';
+import { Select } from "@duik/it";
 
 const months = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December'
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
 ];
 
 const options = months.map(item => ({
