@@ -47,7 +47,15 @@
         "postbuild": "react-snap",
         "deploy": "yarn build && now --target production",
         "test": "react-app-rewired test --env=jsdom",
-        "dev": "react-scripts start"
+        "dev": "webpack --mode=development --color --watch",
+        "dev-server": "cross-env NODE_ENV=development BABEL_ENV=development node --max_old_space_size=4096 ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --mode=development",
+        "lint": "eslint --ignore-path=.eslintignore --ext .js,.jsx,.ts,.tsx . && npm run type",
+        "type": "tsc --noEmit",
+        "cover": "cross-env NODE_ENV=test jest --coverage",
+        "lint-fix": "eslint --fix --ignore-path=.eslintignore --ext .js,.jsx,.ts,tsx . && npm run clean-css && npm run type",
+        "clean-css": "prettier --write 'src/**/*.{css,less,sass,scss}'",
+        "format": "prettier --write './{src,spec,cypress-base}/**/*{.js,.jsx,.ts,.tsx,.css,.less,.scss,.sass}'",
+        "prettier": "npm run format"
     },
     "eslintConfig": {
         "extends": [
@@ -62,9 +70,10 @@
             "not op_mini all"
         ],
         "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
+            "last 3 chrome versions",
+            "last 3 firefox versions",
+            "last 3 safari versions",
+            "last 3 edge versions"
         ]
     }
 }
