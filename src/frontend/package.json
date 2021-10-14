@@ -55,7 +55,8 @@
         "lint-fix": "eslint --fix --ignore-path=.eslintignore --ext .js,.jsx,.ts,tsx . && npm run clean-css && npm run type",
         "clean-css": "prettier --write 'src/**/*.{css,less,sass,scss}'",
         "format": "prettier --write './{src,spec,cypress-base}/**/*{.js,.jsx,.ts,.tsx,.css,.less,.scss,.sass}'",
-        "prettier": "npm run format"
+        "prettier": "npm run format",
+        "prettier-check": "prettier --check 'src/**/*.{css,less,sass,scss}'"
     },
     "eslintConfig": {
         "extends": [
