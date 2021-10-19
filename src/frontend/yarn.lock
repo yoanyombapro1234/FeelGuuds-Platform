@@ -2126,10 +2126,10 @@
     "@babel/runtime" "^7.12.5"
     "@testing-library/dom" "^8.0.0"
 
-"@testing-library/user-event@^13.3.0":
-  version "13.3.0"
-  resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-13.3.0.tgz#2ce50953b885c452a2b2df880a1998637599dcf5"
-  integrity sha512-f8AJ8ybUna88Lmx3l5fuPMhzyyrcopQk/vgVDHVKOnOf2kkjfVSb0Px77iduHmh6uFUcXsD/z6qp4G13rObVrw==
+"@testing-library/user-event@^12.1.10":
+  version "12.8.3"
+  resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-12.8.3.tgz#1aa3ed4b9f79340a1e1836bc7f57c501e838704a"
+  integrity sha512-IR0iWbFkgd56Bu5ZI/ej8yQwrkCv8Qydx6RzwbKz9faXazR/+5tvYKsZQgyXJiwgpcva127YO6JcWy7YlCfofQ==
   dependencies:
     "@babel/runtime" "^7.12.5"
 
@@ -10720,10 +10720,10 @@ react-bootstrap@^1.6.4:
     uncontrollable "^7.2.1"
     warning "^4.0.3"
 
-react-chartjs-2@^3.0.5:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/react-chartjs-2/-/react-chartjs-2-3.0.5.tgz#afc23993a32e146bdcc9addff16a28d8964b98ad"
-  integrity sha512-fYr4E82agaZi9IFMe5GtOZ6WE/HWdxy/KywLNOzXsqgPkD2oo1IlrQLKMLUki/2UXko3p95TR2L8Q2rEss/opQ==
+react-chartjs-2@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/react-chartjs-2/-/react-chartjs-2-3.1.1.tgz#b8a2beff80639b8b5038081f01c1d9368da2c64b"
+  integrity sha512-6CTAXsQbxTuTS9rOjgNWsLygAir9+IXC2B9O3TlgO0qSeBqyMxd4qTMW0HBZ0Id18nYUR+nCou3JHUyyst6BFw==
   dependencies:
     lodash "^4.17.19"
 
