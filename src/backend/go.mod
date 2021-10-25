@@ -19,7 +19,6 @@ require (
 	github.com/jinzhu/gorm v1.9.16
 	github.com/labstack/gommon v0.3.0
 	github.com/lib/pq v1.10.3
-	github.com/mfridman/tparse v0.8.3 // indirect
 	github.com/mwitkow/go-proto-validators v0.3.2
 	github.com/prometheus/client_golang v1.11.0
 	github.com/spf13/cobra v1.2.1
@@ -28,7 +27,7 @@ require (
 	github.com/stretchr/testify v1.7.0
 	github.com/stripe/stripe-go/v72 v72.70.0
 	github.com/swaggo/http-swagger v1.1.2
-	github.com/swaggo/swag v1.7.3
+	github.com/swaggo/swag v1.7.4
 	github.com/wailsapp/wails v1.16.7
 	github.com/yoanyombapro1234/FeelGuuds_Core/core/core-auth-sdk v0.0.0-20210825234059-68dcdef2198a
 	github.com/yoanyombapro1234/FeelGuuds_Core/core/core-database v0.0.0-20210825234059-68dcdef2198a
