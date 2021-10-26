@@ -19,7 +19,6 @@ require (
 	github.com/jinzhu/gorm v1.9.16
 	github.com/labstack/gommon v0.3.0
 	github.com/lib/pq v1.10.3
-	github.com/mfridman/tparse v0.8.3 // indirect
 	github.com/mwitkow/go-proto-validators v0.3.2
 	github.com/prometheus/client_golang v1.11.0
 	github.com/spf13/cobra v1.2.1
@@ -38,5 +37,5 @@ require (
 	google.golang.org/genproto v0.0.0-20211012143446-e1d23e1da178
 	google.golang.org/grpc v1.41.0
 	google.golang.org/protobuf v1.27.1
-	gorm.io/gorm v1.21.16
+	gorm.io/gorm v1.22.0
 )
