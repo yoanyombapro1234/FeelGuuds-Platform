@@ -8,7 +8,7 @@ require (
 	github.com/fatih/color v1.13.0
 	github.com/fsnotify/fsnotify v1.5.1
 	github.com/giantswarm/retry-go v0.0.0-20151203102909-d78cea247d5e
-	github.com/go-openapi/runtime v0.20.0
+	github.com/go-openapi/runtime v0.21.0
 	github.com/golang/protobuf v1.5.2
 	github.com/gomodule/redigo v1.8.5
 	github.com/gorilla/mux v1.8.0
@@ -19,7 +19,6 @@ require (
 	github.com/jinzhu/gorm v1.9.16
 	github.com/labstack/gommon v0.3.0
 	github.com/lib/pq v1.10.3
-	github.com/mfridman/tparse v0.8.3 // indirect
 	github.com/mwitkow/go-proto-validators v0.3.2
 	github.com/prometheus/client_golang v1.11.0
 	github.com/spf13/cobra v1.2.1
