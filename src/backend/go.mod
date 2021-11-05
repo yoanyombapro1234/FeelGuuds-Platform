@@ -19,14 +19,13 @@ require (
 	github.com/jinzhu/gorm v1.9.16
 	github.com/labstack/gommon v0.3.0
 	github.com/lib/pq v1.10.3
-	github.com/mfridman/tparse v0.8.3 // indirect
 	github.com/mwitkow/go-proto-validators v0.3.2
 	github.com/prometheus/client_golang v1.11.0
 	github.com/spf13/cobra v1.2.1
 	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.9.0
 	github.com/stretchr/testify v1.7.0
-	github.com/stripe/stripe-go/v72 v72.70.0
+	github.com/stripe/stripe-go/v72 v72.73.1
 	github.com/swaggo/http-swagger v1.1.2
 	github.com/swaggo/swag v1.7.3
 	github.com/wailsapp/wails v1.16.7
@@ -36,7 +35,7 @@ require (
 	go.uber.org/zap v1.19.1
 	golang.org/x/net v0.0.0-20211011170408-caeb26a5c8c0
 	google.golang.org/genproto v0.0.0-20211012143446-e1d23e1da178
-	google.golang.org/grpc v1.41.0
+	google.golang.org/grpc v1.42.0
 	google.golang.org/protobuf v1.27.1
 	gorm.io/gorm v1.21.16
 )
