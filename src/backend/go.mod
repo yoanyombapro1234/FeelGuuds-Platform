@@ -28,7 +28,7 @@ require (
 	github.com/stripe/stripe-go/v72 v72.73.1
 	github.com/swaggo/http-swagger v1.1.2
 	github.com/swaggo/swag v1.7.4
-	github.com/wailsapp/wails v1.16.7
+	github.com/wailsapp/wails v1.16.9
 	github.com/yoanyombapro1234/FeelGuuds_Core/core/core-auth-sdk v0.0.0-20210825234059-68dcdef2198a
 	github.com/yoanyombapro1234/FeelGuuds_Core/core/core-database v0.0.0-20210825234059-68dcdef2198a
 	github.com/yoanyombapro1234/FeelGuuds_Core/core/core-logging v0.0.0-20210825234059-68dcdef2198a
