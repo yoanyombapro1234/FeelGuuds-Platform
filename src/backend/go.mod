@@ -35,7 +35,7 @@ require (
 	go.uber.org/zap v1.19.1
 	golang.org/x/net v0.0.0-20211011170408-caeb26a5c8c0
 	google.golang.org/genproto v0.0.0-20211012143446-e1d23e1da178
-	google.golang.org/grpc v1.41.0
+	google.golang.org/grpc v1.43.0
 	google.golang.org/protobuf v1.27.1
 	gorm.io/gorm v1.21.16
 )
