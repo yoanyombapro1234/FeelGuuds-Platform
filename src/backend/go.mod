@@ -8,7 +8,7 @@ require (
 	github.com/fatih/color v1.13.0
 	github.com/fsnotify/fsnotify v1.5.1
 	github.com/giantswarm/retry-go v0.0.0-20151203102909-d78cea247d5e
-	github.com/go-openapi/runtime v0.20.0
+	github.com/go-openapi/runtime v0.22.0
 	github.com/golang/protobuf v1.5.2
 	github.com/gomodule/redigo v1.8.5
 	github.com/gorilla/mux v1.8.0
