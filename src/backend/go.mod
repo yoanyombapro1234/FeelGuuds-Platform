@@ -17,7 +17,7 @@ require (
 	github.com/infobloxopen/protoc-gen-gorm v1.0.1
 	github.com/itimofeev/go-saga v0.1.0
 	github.com/jinzhu/gorm v1.9.16
-	github.com/labstack/gommon v0.3.0
+	github.com/labstack/gommon v0.4.0
 	github.com/lib/pq v1.10.3
 	github.com/mwitkow/go-proto-validators v0.3.2
 	github.com/prometheus/client_golang v1.11.0
