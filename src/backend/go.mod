@@ -33,9 +33,9 @@ require (
 	github.com/yoanyombapro1234/FeelGuuds_Core/core/core-database v0.0.0-20210825234059-68dcdef2198a
 	github.com/yoanyombapro1234/FeelGuuds_Core/core/core-logging v0.0.0-20210825234059-68dcdef2198a
 	go.uber.org/zap v1.19.1
-	golang.org/x/net v0.0.0-20211011170408-caeb26a5c8c0
-	google.golang.org/genproto v0.0.0-20211012143446-e1d23e1da178
-	google.golang.org/grpc v1.41.0
-	google.golang.org/protobuf v1.27.1
+	golang.org/x/net v0.4.0
+	google.golang.org/genproto v0.0.0-20221118155620-16455021b5e6
+	google.golang.org/grpc v1.52.0
+	google.golang.org/protobuf v1.28.1
 	gorm.io/gorm v1.21.16
 )
